@@ -89,6 +89,22 @@ POOL_FPM
 #=================================================
 # SPECIFIC SETUP
 #=================================================
+# LANGUAGE
+#=================================================
+if [ $language = "English" ]; then
+    language=en_GB
+else if [ $language = "Français" ] then
+    language=fr_FR
+else if [ $language = "Deutsch" ] then
+    language=de_DE
+else if [ $language = "Portugues" ] then
+    language=pt_PT
+else 
+    ynh_die "Language is no available"
+fi
+
+
+#================================================
 # Installation : Get Composer:
 #=================================================
 echo "The installation can take long. So be patient ! :)"

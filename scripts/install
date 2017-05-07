@@ -25,6 +25,8 @@ is_public=$YNH_APP_ARG_IS_PUBLIC
 admin_name=$YNH_APP_ARG_ADMIN_NAME
 admin_pass=$YNH_APP_ARG_ADMIN_PASS
 admin_email=$YNH_APP_ARG_ADMIN_EMAIL
+language=$YNH_APP_ARG_LANGUAGE
+website_title=$YNH_APP_ARG_WEBSITE_TITLE
 
 app=$YNH_APP_INSTANCE_NAME
 
@@ -46,6 +48,8 @@ ynh_app_setting_set "$app" is_public "$is_public"
 ynh_app_setting_set "$app" admin_pass "$admin_pass"
 ynh_app_setting_set "$app" admin_name "$admin_name"
 ynh_app_setting_set "$app" admin_email "$admin_email"
+ynh_app_setting_set "$app" language "$language"
+ynh_app_setting_set "$app" website_title "$website_title"
 
 #=================================================
 # Check password strength
@@ -85,44 +89,23 @@ POOL_FPM
 #=================================================
 # SPECIFIC SETUP
 #=================================================
-# Modify the config.yml
-#=================================================
-
-sudo rm $final_path/conf/config.default.yml
-sed -i "s@db_user@$db_user@g"         ../conf/config.yml
-sed -i "s@db_pass@$db_pass@g"         ../conf/config.yml
-sed -i "s@db_name@$db_name@g"         ../conf/config.yml
-sudo mv ../conf/config.yml $final_path/conf/config.yml
-
-#=================================================
 # Installation : Get Composer:
 #=================================================
-
+echo "The installation can take long. So be patient ! :)"
 pushd $final_path
 sudo php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 sudo php -r "if (hash_file('SHA384', 'composer-setup.php') === '669656bab3166a7aff8a7506b8cb2d1c292f042046c5a994c43155c0be6190fa0355160742ab2e1c88d40d5be660b410') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
 sudo php composer-setup.php
 sudo php -r "unlink('composer-setup.php');"
-sudo ./composer.phar install --no-dev -o;
-# Create database schema
-sudo ./bin/roadiz orm:schema-tool:create -n
-# Install base fixtures
-sudo ./bin/roadiz install -n
-# Install DefaultTheme
-sudo ./bin/roadiz themes:install -n "/Themes/DefaultTheme/DefaultThemeApp"
-# Install DefaultTheme node-type, settings and tags
-sudo ./bin/roadiz themes:install -n --data "/Themes/DefaultTheme/DefaultThemeApp"
-# Generate node-type Doctrine entities
-sudo ./bin/roadiz generate:nsentities
-# Update database with new node-types
-sudo ./bin/roadiz orm:schema-tool:update -n --force
-# Add DefaultTheme node fixtures
-sudo ./bin/roadiz themes:install -n --nodes "/Themes/DefaultTheme/DefaultThemeApp"
-# Clear caches
-sudo ./bin/roadiz cache:clear -e dev
-sudo ./bin/roadiz cache:clear -e prod
-sudo ./bin/roadiz cache:clear -e prod --preview
-sudo ./bin/roadiz users:create -n --email=$admin_email --password=$admin_pass --super-admin $admin_name;
+sudo ./composer.phar install:
+sudo ./concrete/bin/concrete5 c5:install --db-server=localhost \
+                                         --db-username=$db_user \
+                                         --db-password=$db_pass \
+                                         --db-database=$db_name \
+                                         --site="'$website_title'" \
+                                         --admin-email="'$admin_email'" \
+                                         --admin-password=$admin_pass \
+                                         --language=$language
 popd
 
 #=================================================

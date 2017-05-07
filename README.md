@@ -1,4 +1,4 @@
-[![Install concrete5 with YunoHost](https://github.com/ABLD/install-app/blob/master/install-with-yunohost-community.png)](https://install-app.yunohost.org/?app=concrete)
+[![Install concrete5 with YunoHost](https://github.com/ABLD/install-app/blob/master/install-with-yunohost-community.png)](https://install-app.yunohost.org/?app=concrete5)
 
 # concrete5_ynh
 Concrete5 is a modern CMS.

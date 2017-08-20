@@ -87,11 +87,13 @@
             {
                 "name": "language",
                 "ask": {
-                    "en": "Language of your Website",
-                    "fr": "Langage de votre site"
+                    "en": "Default language to be used in your website admin",
+                    "fr": "Langue par défaut à utiliser dans votre interface d'administration"
                 },
-                "choices": ["English", "Français"],
-                "default": "Français"
+                "choices": [
+                    "English", "Français", "Portuges"
+                ],
+                "default": "English"
             }
         ]
     }

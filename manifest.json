@@ -90,7 +90,7 @@
                     "en": "Language of your Website",
                     "fr": "Langage de votre site"
                 },
-                "choices": ["English", "Anglais", "Français", "Portuges", "Deutsch"],
+                "choices": ["English", "Français"],
                 "default": "Français"
             }
         ]

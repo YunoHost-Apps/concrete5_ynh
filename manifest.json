@@ -3,7 +3,7 @@
     "id": "concrete5",
     "packaging_format": 1,
     "requirements": {
-        "yunohost": ">> 2.3.15"
+        "yunohost": ">=2.6"
     },
     "description": {
         "en": "Create a modern Website",

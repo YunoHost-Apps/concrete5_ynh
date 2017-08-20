@@ -38,8 +38,8 @@
                     "en": "Choose a path for Concrete5",
                     "fr": "Choisissez un chemin pour Concrete5"
                 },
-                "example": "/roadiz",
-                "default": "/roadiz"
+                "example": "/concrete",
+                "default": "/concrete"
             },
             {
                 "name": "is_public",
@@ -91,7 +91,7 @@
                     "fr": "Langue par défaut à utiliser dans votre interface d'administration"
                 },
                 "choices": [
-                    "English", "Français", "Portuges"
+                    "En", "Fr", "De", "Pt"
                 ],
                 "default": "English"
             }

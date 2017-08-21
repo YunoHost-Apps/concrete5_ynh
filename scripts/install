@@ -134,8 +134,8 @@ popd
 #=================================================
 
 sudo chown www-data:www-data $final_path -R
-sudo chmod 775 $final_path -R
-sudo rm $final_path/install.php
+sudo chmod 777 $final_path -R
+
 
 #=================================================
 # NGINX CONFIGURATION

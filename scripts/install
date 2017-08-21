@@ -92,13 +92,17 @@ POOL_FPM
 #=================================================
 # LANGUAGE
 #=================================================
-if [ $language = "En" ] then
+if [ $language = "En" ]
+then
     language=en_GB
-elif [ $language = "Fr" ] then
+elif [ $language = "Fr" ] 
+then
     language=fr_FR
-elif [ $language = "De" ] then
+elif [ $language = "De" ] 
+then
     language=de_DE
-elif [ $language = "Pt" ] then
+elif [ $language = "Pt" ] 
+then
     language=pt_PT
 else 
     ynh_die "Language is no available"

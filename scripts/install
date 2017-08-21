@@ -92,7 +92,7 @@ POOL_FPM
 #=================================================
 # LANGUAGE
 #=================================================
-if [ $language = "En" ]; then
+if [ $language = "En" ] then
     language=en_GB
 elif [ $language = "Fr" ] then
     language=fr_FR

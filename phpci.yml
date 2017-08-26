@@ -3,7 +3,7 @@ build_settings:
 
 setup:
     shell :
-      command: "/home/package_check/package_check.sh %BUILD_PATH%"
+      command: "/home/package_check/package_check.sh -f -y %BUILD_PATH%"
         
 complete:
     email:

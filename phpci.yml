@@ -1,0 +1,7 @@
+build_settings:
+    clone_depth: 1 # depth of 1 is a shallow clone, remove this line to clone entire repo
+
+setup:
+    shell :
+      - "package_check.sh -l %BUILD_PATH%"
+        

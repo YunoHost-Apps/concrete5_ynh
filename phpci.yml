@@ -3,5 +3,8 @@ build_settings:
 
 setup:
     shell :
-      - "package_check.sh -l %BUILD_PATH%"
+      - command:"/usr/local/bin/package_check.sh -l %BUILD_PATH%"
         
+complete:
+    email:
+        default_mailto_address: abld@tutanota.com

@@ -140,21 +140,14 @@ sudo chmod 777 $final_path -R
 #=================================================
 # NGINX CONFIGURATION
 #=================================================
-nginxrootconf="../conf/nginx-root.conf"
+
 nginxconf="../conf/nginx.conf"
-if [ $path_url = "/" ]; then
-    sed -i "s@ROOT_PATH@/var/www/$app@g" $nginxrootconf
-    sed -i "s@APP_URL@$domain$path_url@g" $nginxrootconf
-    sudo chown root: $nginxrootconf
-    sudo chmod 644 $nginxrootconf
-    sudo cp $nginxrootconf /etc/nginx/conf.d/$domain.d/$app.conf
-else
-    sed -i "s@YNH_WWW_PATH@$path_url@g" $nginxconf
-    sed -i "s@YNH_WWW_ALIAS@$final_path@g" $nginxconf
-    sudo chown root: $nginxconf
-    sudo chmod 644 $nginxconf
-    sudo cp $nginxconf /etc/nginx/conf.d/$domain.d/$app.conf
-fi
+# Copy and set nginx configuration
+sed -i "s@{PATH}@${path_url}@g"        $nginxconf
+sed -i "s@{LOCATION}@${path_url:-/}@g" $nginxconf
+sed -i "s@{DESTDIR}@${final_path}@g"  $nginxconf
+sed -i "s@{POOLNAME}@${app}@g"     $nginxconf
+sudo cp ../conf/nginx.conf /etc/nginx/conf.d/${domain}.d/${app}.conf
 
 #=================================================
 # SETUP SSOWAT

@@ -72,6 +72,7 @@
                 "name": "admin_email",
                 "type": "email",
                 "ask": {
+                    "en": "Your mail address.",
                     "fr": "Votre adresse mail."
                 },
                 "exemple": "abc@efg.hi"
@@ -80,6 +81,7 @@
                 "name": "website_title",
                 "type": "title",
                 "ask": {
+                    "en": "Your website's title.",
                     "fr": "Le titre de votre site."
                 },
                 "exemple": "MY BIG WEBSITE"

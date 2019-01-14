@@ -9,6 +9,7 @@
         "en": "Create a modern Website",
         "fr": "Créer un site web moderne avec un CMS moderne"
     },
+    "version": "8.4.4",
     "license": "MIT",
     "url": "www.concrete5.org",
     "license": "free",

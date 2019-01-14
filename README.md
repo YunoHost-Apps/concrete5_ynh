@@ -22,6 +22,11 @@ Site officiel : https://www.concrete5.org/
 
 **Shipped version:** 8.4.4
 
+
+## Licence
+
+LICENSE MIT
+
 ## Screenshots
 
 ![](Link to an screenshot for this app)

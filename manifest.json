@@ -71,8 +71,8 @@
                     "en": "Choose the application language",
                     "fr": "Choisissez la langue de l'application"
                 },
-                "choices": ["en_GB", "fr_FR", "de_DE", "pt_PT"],
-                "default": "en_GB"
+                "choices": ["en_US", "fr_FR", "de_DE", "pt_PT"],
+                "default": "en_US"
             },
             {
                 "name": "password",

@@ -1,4 +1,4 @@
-	o#!/bin/bash
+#!/bin/bash
 
 #=================================================
 # GENERIC START
@@ -185,8 +185,8 @@ sudo php composer-setup.php
 sudo php -r "unlink('composer-setup.php');"
 sudo ./composer.phar install
 sudo ./concrete/bin/concrete5 c5:install --db-server=localhost \
-                                         --db-username=$db_user \
-                                         --db-password=$db_pass \
+                                         --db-username=$db_name \
+                                         --db-password=$db_pwd \
                                          --db-database=$db_name \
                                          --site="'$website_title'" \
                                          --admin-email="'$admin_email'" \
@@ -250,7 +250,7 @@ popd
 ### `ynh_replace_string` is used to replace a string in a file.
 ### (It's compatible with sed regular expressions syntax)
 
-ynh_replace_string "match_string" "replace_string" "$final_path/CONFIG_FILE"
+#ynh_replace_string "match_string" "replace_string" "$final_path/CONFIG_FILE"
 
 #=================================================
 # STORE THE CONFIG FILE CHECKSUM
@@ -261,7 +261,7 @@ ynh_replace_string "match_string" "replace_string" "$final_path/CONFIG_FILE"
 ### you can make a backup of this file before modifying it again if the admin had modified it.
 
 # Calculate and store the config file checksum into the app settings
-ynh_store_file_checksum "$final_path/CONFIG_FILE"
+#ynh_store_file_checksum "$final_path/CONFIG_FILE"
 
 #=================================================
 # GENERIC FINALIZATION

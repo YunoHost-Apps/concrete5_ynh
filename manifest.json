@@ -94,7 +94,8 @@
                     "en": "Your website's title.",
                     "fr": "Le titre de votre site."
                 },
-                "exemple": "MY BIG WEBSITE"
+                "exemple": "MY BIG WEBSITE",
+                "default": "Concrete"
             }
         ]
     }

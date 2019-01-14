@@ -184,7 +184,7 @@ sudo php -r "if (hash_file('sha384', 'composer-setup.php') === '93b54496392c0627
 sudo php composer-setup.php
 sudo php -r "unlink('composer-setup.php');"
 sudo ./composer.phar install
-sudo -u $app ./concrete/bin/concrete5 c5:install --db-server=localhost \
+sudo ./concrete/bin/concrete5 c5:install --db-server=localhost \
                                          --db-database=$db_name \
                                          --db-username=$db_name \
                                          --db-password=$db_pwd \

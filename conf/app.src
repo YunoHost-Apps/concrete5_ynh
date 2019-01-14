@@ -1,2 +1,6 @@
-SOURCE_URL=https://github.com/concrete5/concrete5/archive/8.2.1.tar.gz
-SOURCE_SUM=3cd496c25f3bc02451219ce39e471cdc
+SOURCE_URL=https://codeload.github.com/concrete5/concrete5/tar.gz/8.4.4
+SOURCE_SUM=sha256 7c862e4d3b2aed854fd86ee1a5d94222dd72f555d56828111db603005c1d1b6f
+SOURCE_SUM_PRG=sha256sum
+SOURCE_FORMAT=tar.gz
+SOURCE_IN_SUBDIR=true
+SOURCE_FILENAME=

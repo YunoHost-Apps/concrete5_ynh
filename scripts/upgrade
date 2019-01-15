@@ -121,7 +121,7 @@ sudo ./concrete/bin/concrete5 c5:config -g set concrete.maintenance_mode true
 popd
 ynh_setup_source "$final_path"
 pushd $final_path
-sudo ./concrete/bin/concrete5 c5:update
+sudo ./concrete/bin/concrete5 c5:update --verbose
 sudo ./concrete/bin/concrete5 c5:config -g set concrete.maintenance_mode false
 popd
 

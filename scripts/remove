@@ -81,7 +81,7 @@ ynh_remove_fpm_config
 #=================================================
 
 # Remove the app-specific logrotate config
-ynh_remove_logrotate
+#ynh_remove_logrotate
 
 #=================================================
 # CLOSE A PORT

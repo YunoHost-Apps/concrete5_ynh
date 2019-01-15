@@ -114,7 +114,7 @@ ynh_restore_file "/etc/cron.d/$app"
 # RESTORE THE LOGROTATE CONFIGURATION
 #=================================================
 
-ynh_restore_file "/etc/logrotate.d/$app"
+#ynh_restore_file "/etc/logrotate.d/$app"
 
 #=================================================
 # GENERIC FINALIZATION

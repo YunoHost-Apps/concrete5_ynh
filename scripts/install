@@ -341,6 +341,6 @@ systemctl reload nginx
 # WARNING : theses command are used in INSTALL, RESTORE
 # For any update do it in all files
 
-message="To connect to your Concrete Website go to $domain/$path_url with Username: admin"
+message="To connect to your Concrete Website go to <a href=\"https://$domain$path_url\">https://$domain$path_url</a> with Username: admin"
 
 ynh_send_readme_to_admin "$message"

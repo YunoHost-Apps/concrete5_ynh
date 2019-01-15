@@ -284,7 +284,8 @@ popd
 ### that really need such authorization.
 
 # Set permissions to app files
-chown -R root: $final_path
+sudo chown -R www-data:www-data: $final_path
+sudo chmod 777 $final_path -R
 
 #=================================================
 # SETUP LOGROTATE

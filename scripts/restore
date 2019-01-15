@@ -108,7 +108,7 @@ yunohost service add $app --log "/var/log/$app/APP.log"
 # RESTORE THE CRON FILE
 #=================================================
 
-ynh_restore_file "/etc/cron.d/$app"
+#ynh_restore_file "/etc/cron.d/$app"
 
 #=================================================
 # RESTORE THE LOGROTATE CONFIGURATION

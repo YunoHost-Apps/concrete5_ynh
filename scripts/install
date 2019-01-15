@@ -343,4 +343,4 @@ systemctl reload nginx
 
 message="To connect to your Concrete Website go to $domain/$path_url with Username: admin"
 
-#ynh_send_readme_to_admin "$message"
+ynh_send_readme_to_admin "$message"

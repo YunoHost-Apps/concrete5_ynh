@@ -70,7 +70,6 @@ ynh_app_setting_set $app path $path_url
 ynh_app_setting_set $app admin $admin
 ynh_app_setting_set $app is_public $is_public
 ynh_app_setting_set $app language $language
-ynh_app_setting_set $app password $password
 ynh_app_setting_set $app admin_email $admin_email
 ynh_app_setting_set $app website_title $website_title
 
@@ -284,7 +283,7 @@ popd
 ### that really need such authorization.
 
 # Set permissions to app files
-sudo chown -R www-data:www-data: $final_path
+sudo chown -R www-data: $final_path
 sudo chmod 777 $final_path -R
 
 #=================================================

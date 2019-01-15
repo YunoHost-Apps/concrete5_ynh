@@ -187,8 +187,8 @@ sudo ./concrete/bin/concrete5 c5:install --db-server=localhost \
                                          --db-database=$db_name \
                                          --db-username=$db_name \
                                          --db-password=$db_pwd \
-                                         --site="'$website_title'" \
-                                         --admin-email="'$admin_email'" \
+                                         --site="$website_title" \
+                                         --admin-email="$admin_email" \
                                          --admin-password=$password \
                                          --language=$language \
                                          --site-locale=$language \
@@ -333,3 +333,14 @@ fi
 #=================================================
 
 systemctl reload nginx
+
+#=================================================
+# SEND A README FOR THE ADMIN
+#=================================================
+
+# WARNING : theses command are used in INSTALL, RESTORE
+# For any update do it in all files
+
+message="To connect to your Concrete Website go to $domain/$path_url with Username: admin"
+
+ynh_send_readme_to_admin "$message"

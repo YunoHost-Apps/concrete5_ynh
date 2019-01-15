@@ -117,12 +117,12 @@ ynh_add_fpm_config
 #ynh_store_file_checksum "$final_path/CONFIG_FILE"
 
 pushd $final_path
-sudo ./concrete/bin/concrete5 c5:config -g set concrete.maintenance_mode true
+sudo ./concrete/bin/concrete5 c5:config -g set concrete.maintenance_mode true --allow-as-root
 popd
 ynh_setup_source "$final_path"
 pushd $final_path
-sudo ./concrete/bin/concrete5 c5:update --verbose
-sudo ./concrete/bin/concrete5 c5:config -g set concrete.maintenance_mode false
+sudo ./concrete/bin/concrete5 c5:update --verbose --allow-as-root
+sudo ./concrete/bin/concrete5 c5:config -g set concrete.maintenance_mode false --allow-as-root
 popd
 
 

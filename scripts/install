@@ -194,7 +194,8 @@ sudo ./concrete/bin/concrete5 c5:install --db-server=localhost \
                                          --language=$language \
                                          --site-locale=$language \
 										 --verbose \
-										 --no-interaction
+										 --no-interaction \
+										 --allow-as-root
 popd
 
 #time zone

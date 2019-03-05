@@ -1,6 +1,9 @@
 #!/bin/bash
 
-# ============= FUTURE YUNOHOST HELPER =============
+#=================================================
+# PERSONAL HELPERS
+#=================================================
+
 # Delete a file checksum from the app settings
 #
 # $app should be defined when calling this helper
@@ -68,3 +71,11 @@ $(yunohost tools diagnosis | grep -B 100 "services:" | sed '/services:/d')"
 	# Send the email to the recipients
 	echo "$mail_message" | $mail_bin -a "Content-Type: text/plain; charset=UTF-8" -s "$mail_subject" "$recipients"
 }
+
+#=================================================
+# EXPERIMENTAL HELPERS
+#=================================================
+
+#=================================================
+# FUTURE OFFICIAL HELPERS
+#=================================================

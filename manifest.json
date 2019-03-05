@@ -2,28 +2,24 @@
     "name": "Concrete5",
     "id": "concrete5",
     "packaging_format": 1,
-    "requirements": {
-        "yunohost": ">=2.6"
-    },
     "description": {
         "en": "Create a modern Website",
         "fr": "Créer un site web moderne avec un CMS moderne"
     },
-    "version": "8.4.4",
-    "license": "MIT",
+    "version": "8.4.4~ynh1",
     "url": "www.concrete5.org",
-    "license": "free",
+    "license": "MIT",
     "maintainer": {
         "name": "frju365",
         "email": "win10@tutanota.com"
     },
     "requirements": {
-        "yunohost": ">= 2.7.14"
+        "yunohost": ">= 3.4"
     },
     "multi_instance": true,
     "services": [
         "nginx",
-        "php7-fpm",
+        "php7.0-fpm",
         "mysql"
     ],
     "arguments": {
@@ -67,6 +63,7 @@
             },
             {
                 "name": "language",
+                "type": "string",
                 "ask": {
                     "en": "Choose the application language",
                     "fr": "Choisissez la langue de l'application"

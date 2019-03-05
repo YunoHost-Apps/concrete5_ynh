@@ -27,7 +27,7 @@ Features :
 
 #### Multi-users support
 
-LDAP and HTTP auth are not supported?
+LDAP and HTTP auth are not supported
 
 #### Supported architectures
 

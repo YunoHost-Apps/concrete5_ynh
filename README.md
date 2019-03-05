@@ -19,46 +19,21 @@ Features :
 
 **Shipped version:** 8.4.5
 
-## Screenshots
-
-![](Link to an screenshot for this app)
-
-## Demo
-
-* [Official demo](Link to a demo site for this app)
-
-## Configuration
-
-How to configure this app: by an admin panel, a plain file with SSH, or any other way.
-
 ## Documentation
 
- * Official documentation: Link to the official documentation of this app
- * YunoHost documentation: If specific documentation is needed, feel free to contribute.
+ * Official documentation: https://documentation.concrete5.org/
 
 ## YunoHost specific features
 
 #### Multi-users support
 
-Are LDAP and HTTP auth supported?
-Can the app be used by multiple users?
+LDAP and HTTP auth are not supported?
 
 #### Supported architectures
 
 * x86-64b - [![Build Status](https://ci-apps.yunohost.org/ci/logs/concrete5%20%28Community%29.svg)](https://ci-apps.yunohost.org/ci/apps/concrete5/)
 * ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/concrete5%20%28Community%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/concrete5/)
 * Jessie x86-64b - [![Build Status](https://ci-stretch.nohost.me/ci/logs/concrete5%20%28Community%29.svg)](https://ci-stretch.nohost.me/ci/apps/concrete5/)
-
-## Limitations
-
-* Any known limitations.
-
-## Additional information
-
-* Other information you would add about this application
-
-**More information on the documentation page:**  
-https://yunohost.org/packaging_apps
 
 ## Links
 

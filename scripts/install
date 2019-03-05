@@ -15,7 +15,6 @@ source /usr/share/yunohost/helpers
 
 ynh_clean_setup () {
 	### Remove this function if there's nothing to clean before calling the remove script.
-        read -p "Press any key..."
 	true
 }
 # Exit if an error occurs during the execution of the script
@@ -314,7 +313,7 @@ ynh_print_info "Configuring log rotation..."
 ###		- Remove the section "REMOVE SERVICE FROM ADMIN PANEL" in the remove script
 ###		- As well as the section "ADVERTISE SERVICE IN ADMIN PANEL" in the restore script
 
-yunohost service add $app --log "/var/log/$app/APP.log"
+#yunohost service add $app --log "/var/log/$app/APP.log"
 # if using yunohost version 3.2 or more in the 'manifest.json', a description can be added
 #yunohost service add $app --description "$app daemon for XXX" --log "/var/log/$app/APP.log"
 

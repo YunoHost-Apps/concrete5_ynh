@@ -110,7 +110,7 @@ ynh_print_info "Restoring the systemd configuration..."
 # ADVERTISE SERVICE IN ADMIN PANEL
 #=================================================
 
-yunohost service add $app --log "/var/log/$app/APP.log"
+#yunohost service add $app --log "/var/log/$app/APP.log"
 
 #=================================================
 # RESTORE THE CRON FILE

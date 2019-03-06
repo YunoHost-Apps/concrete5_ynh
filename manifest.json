@@ -86,7 +86,7 @@
             },
             {
                 "name": "website_title",
-                "type": "title",
+                "type": "string",
                 "ask": {
                     "en": "Your website's title.",
                     "fr": "Le titre de votre site."

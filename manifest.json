@@ -6,7 +6,7 @@
         "en": "Create a modern Website",
         "fr": "Créer un site web moderne avec un CMS moderne"
     },
-    "version": "8.4.5~ynh1",
+    "version": "8.5.0~ynh1",
     "url": "www.concrete5.org",
     "license": "MIT",
     "maintainer": {
@@ -44,7 +44,7 @@
                 "default": "/concrete"
             },
             {
-                "name": "admin",
+                "name": "admin_name",
                 "type": "user",
                 "ask": {
                     "en": "Choose an admin user",
@@ -72,7 +72,7 @@
                 "default": "en_US"
             },
             {
-                "name": "password",
+                "name": "admin_pass",
                 "type": "password",
                 "ask": {
                     "en": "Set the administrator password",

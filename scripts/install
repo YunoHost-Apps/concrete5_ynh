@@ -22,12 +22,12 @@ ynh_abort_if_errors
 
 domain=$YNH_APP_ARG_DOMAIN
 path_url=$YNH_APP_ARG_PATH
-admin=$YNH_APP_ARG_ADMIN
+admin_name=$YNH_APP_ARG_ADMIN_NAME
 is_public=$YNH_APP_ARG_IS_PUBLIC
 language=$YNH_APP_ARG_LANGUAGE
 password=$YNH_APP_ARG_PASSWORD
 website_title=$YNH_APP_ARG_WEBSITE_TITLE
-admin_email=$(ynh_user_get_info $admin 'mail')
+admin_email=$(ynh_user_get_info $admin_name 'mail')
 
 app=$YNH_APP_INSTANCE_NAME
 
@@ -52,7 +52,7 @@ ynh_print_info "Storing installation settings..."
 
 ynh_app_setting_set $app domain $domain
 ynh_app_setting_set $app path $path_url
-ynh_app_setting_set $app admin $admin
+ynh_app_setting_set $app admin_name $admin_name
 ynh_app_setting_set $app is_public $is_public
 ynh_app_setting_set $app language $language
 ynh_app_setting_set $app admin_email $admin_email
@@ -120,7 +120,7 @@ pushd $final_path
                                         --db-password=$db_pwd \
                                         --site="$website_title" \
                                         --admin-email="$admin_email" \
-                                        --admin-password=$password \
+                                        --admin-password="$admin_pass" \
                                         --language=$language \
                                         --site-locale=$language \
                                         --verbose \

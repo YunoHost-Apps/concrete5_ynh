@@ -57,18 +57,6 @@ ynh_print_info "Removing php-fpm configuration"
 ynh_remove_fpm_config
 
 #=================================================
-# SPECIFIC REMOVE
-#=================================================
-# REMOVE THE CRON FILE
-#=================================================
-
-# Remove a directory securely
-ynh_secure_remove "/etc/$app/"
-
-# Remove the log files
-ynh_secure_remove "/var/log/$app/"
-
-#=================================================
 # GENERIC FINALIZATION
 #=================================================
 # REMOVE DEDICATED USER

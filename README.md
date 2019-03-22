@@ -17,7 +17,7 @@ Features :
 * Marketing tools
 * **and more**...
 
-**Shipped version:** 8.5.0
+**Shipped version:** 8.4.5
 
 ## Documentation
 

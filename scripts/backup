@@ -65,26 +65,6 @@ ynh_mysql_dump_db "$db_name" > db.sql
 #=================================================
 # SPECIFIC BACKUP
 #=================================================
-# BACKUP LOGROTATE
-#=================================================
-ynh_print_info "Backing up logrotate configuration..."
-
-#ynh_backup "/etc/logrotate.d/$app"
-
-#=================================================
-# BACKUP SYSTEMD
-#=================================================
-ynh_print_info "Backing up systemd configuration..."
-
-#ynh_backup "/etc/systemd/system/$app.service"
-
-#=================================================
-# BACKUP A CRON FILE
-#=================================================
-
-#ynh_backup "/etc/cron.d/$app"
-
-#=================================================
 # END OF SCRIPT
 #=================================================
 

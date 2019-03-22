@@ -71,7 +71,7 @@ ynh_system_user_create $app
 #=================================================
 
 # Restore permissions on app files
-chown -R $app: $final_path
+chown -R www-data: $final_path
 
 #=================================================
 # RESTORE THE PHP-FPM CONFIGURATION
@@ -82,14 +82,6 @@ ynh_restore_file "/etc/php/7.0/fpm/pool.d/$app.conf"
 #=================================================
 # SPECIFIC RESTORATION
 #=================================================
-# REINSTALL DEPENDENCIES
-#=================================================
-ynh_print_info "Reinstalling dependencies..."
-
-# Define and install dependencies
-#ynh_install_app_dependencies deb1 deb2
-
-#=================================================
 # RESTORE THE MYSQL DATABASE
 #=================================================
 ynh_print_info "Restoring the MySQL database..."
@@ -97,32 +89,6 @@ ynh_print_info "Restoring the MySQL database..."
 db_pwd=$(ynh_app_setting_get $app mysqlpwd)
 ynh_mysql_setup_db $db_name $db_name $db_pwd
 ynh_mysql_connect_as $db_name $db_pwd $db_name < ./db.sql
-
-#=================================================
-# RESTORE SYSTEMD
-#=================================================
-ynh_print_info "Restoring the systemd configuration..."
-
-#ynh_restore_file "/etc/systemd/system/$app.service"
-#systemctl enable $app.service
-
-#=================================================
-# ADVERTISE SERVICE IN ADMIN PANEL
-#=================================================
-
-#yunohost service add $app --log "/var/log/$app/APP.log"
-
-#=================================================
-# RESTORE THE CRON FILE
-#=================================================
-
-#ynh_restore_file "/etc/cron.d/$app"
-
-#=================================================
-# RESTORE THE LOGROTATE CONFIGURATION
-#=================================================
-
-#ynh_restore_file "/etc/logrotate.d/$app"
 
 #=================================================
 # GENERIC FINALIZATION

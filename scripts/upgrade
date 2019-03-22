@@ -90,13 +90,6 @@ ynh_print_info "Upgrading nginx web server configuration..."
 ynh_add_nginx_config
 
 #=================================================
-# UPGRADE DEPENDENCIES
-#=================================================
-ynh_print_info "Upgrading dependencies..."
-
-#ynh_install_app_dependencies deb1 deb2
-
-#=================================================
 # CREATE DEDICATED USER
 #=================================================
 ynh_print_info "Making sure dedicated system user exists..."
@@ -122,28 +115,6 @@ pushd $final_path
     sudo ./concrete/bin/concrete5 c5:update --rerun --verbose --allow-as-root
 popd
 
-### Verify the checksum of a file, stored by `ynh_store_file_checksum` in the install script.
-### And create a backup of this file if the checksum is different. So the file will be backed up if the admin had modified it.
-#ynh_backup_if_checksum_is_different "$final_path/CONFIG_FILE"
-# Recalculate and store the checksum of the file for the next upgrade.
-#ynh_store_file_checksum "$final_path/CONFIG_FILE"
-
-#=================================================
-# SETUP LOGROTATE
-#=================================================
-ynh_print_info "Upgrading logrotate configuration..."
-
-# Use logrotate to manage app-specific logfile(s)
-#ynh_use_logrotate --non-append
-
-#=================================================
-# SETUP SYSTEMD
-#=================================================
-ynh_print_info "Upgrading systemd configuration..."
-
-# Create a dedicated systemd config
-#ynh_add_systemd_config
-
 #=================================================
 # GENERIC FINALIZATION
 #=================================================
@@ -151,7 +122,7 @@ ynh_print_info "Upgrading systemd configuration..."
 #=================================================
 
 # Set permissions on app files
-chown -R root: $final_path
+chown -R www-data: $final_path
 
 #=================================================
 # SETUP SSOWAT

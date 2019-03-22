@@ -202,76 +202,6 @@ pushd $final_path
 popd
 
 #=================================================
-# SETUP SYSTEMD
-#=================================================
-ynh_print_info "Configuring a systemd service..."
-
-### `ynh_systemd_config` is used to configure a systemd script for an app.
-### It can be used for apps that use sysvinit (with adaptation) or systemd.
-### Have a look at the app to be sure this app needs a systemd script.
-### `ynh_systemd_config` will use the file conf/systemd.service
-### If you're not using these lines:
-###		- You can remove those files in conf/.
-###		- Remove the section "BACKUP SYSTEMD" in the backup script
-###		- Remove also the section "STOP AND REMOVE SERVICE" in the remove script
-###		- As well as the section "RESTORE SYSTEMD" in the restore script
-###		- And the section "SETUP SYSTEMD" in the upgrade script
-
-# Create a dedicated systemd config
-#ynh_add_systemd_config
-
-#=================================================
-# SETUP APPLICATION WITH CURL
-#=================================================
-
-### Use these lines only if the app installation needs to be finalized through
-### web forms. We generally don't want to ask the final user,
-### so we're going to use curl to automatically fill the fields and submit the
-### forms.
-
-# Set right permissions for curl install
-#chown -R $app: $final_path
-
-# Set the app as temporarily public for curl call
-#ynh_print_info "Configuring SSOwat..."
-#ynh_app_setting_set $app skipped_uris "/"
-# Reload SSOwat config
-#yunohost app ssowatconf
-
-# Reload Nginx
-#systemctl reload nginx
-
-# Installation with curl
-#ynh_print_info "Finalizing installation..."
-#ynh_local_curl "/INSTALL_PATH" "key1=value1" "key2=value2" "key3=value3"
-
-# Remove the public access
-#if [ $is_public -eq 0 ]
-#then
-#	ynh_app_setting_delete $app skipped_uris
-#fi
-
-#=================================================
-# MODIFY A CONFIG FILE
-#=================================================
-
-### `ynh_replace_string` is used to replace a string in a file.
-### (It's compatible with sed regular expressions syntax)
-
-#ynh_replace_string "match_string" "replace_string" "$final_path/CONFIG_FILE"
-
-#=================================================
-# STORE THE CONFIG FILE CHECKSUM
-#=================================================
-
-### `ynh_store_file_checksum` is used to store the checksum of a file.
-### That way, during the upgrade script, by using `ynh_backup_if_checksum_is_different`,
-### you can make a backup of this file before modifying it again if the admin had modified it.
-
-# Calculate and store the config file checksum into the app settings
-#ynh_store_file_checksum "$final_path/CONFIG_FILE"
-
-#=================================================
 # GENERIC FINALIZATION
 #=================================================
 # SECURE FILES AND DIRECTORIES
@@ -284,38 +214,6 @@ ynh_print_info "Configuring a systemd service..."
 # Set permissions to app files
 sudo chown -R www-data: $final_path
 sudo chmod 777 $final_path -R
-
-#=================================================
-# SETUP LOGROTATE
-#=================================================
-ynh_print_info "Configuring log rotation..."
-
-### `ynh_use_logrotate` is used to configure a logrotate configuration for the logs of this app.
-### Use this helper only if there is effectively a log file for this app.
-### If you're not using this helper:
-###		- Remove the section "BACKUP LOGROTATE" in the backup script
-###		- Remove also the section "REMOVE LOGROTATE CONFIGURATION" in the remove script
-###		- As well as the section "RESTORE THE LOGROTATE CONFIGURATION" in the restore script
-###		- And the section "SETUP LOGROTATE" in the upgrade script
-
-# Use logrotate to manage application logfile(s)
-#ynh_use_logrotate
-
-#=================================================
-# ADVERTISE SERVICE IN ADMIN PANEL
-#=================================================
-
-### `yunohost service add` is a CLI yunohost command to add a service in the admin panel.
-### You'll find the service in the 'services' section of YunoHost admin panel.
-### This CLI command would be useless if the app does not have any services (systemd or sysvinit)
-### If you're not using these lines:
-###		- You can remove these files in conf/.
-###		- Remove the section "REMOVE SERVICE FROM ADMIN PANEL" in the remove script
-###		- As well as the section "ADVERTISE SERVICE IN ADMIN PANEL" in the restore script
-
-#yunohost service add $app --log "/var/log/$app/APP.log"
-# if using yunohost version 3.2 or more in the 'manifest.json', a description can be added
-#yunohost service add $app --description "$app daemon for XXX" --log "/var/log/$app/APP.log"
 
 #=================================================
 # SETUP SSOWAT

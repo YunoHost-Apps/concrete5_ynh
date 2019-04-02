@@ -1,19 +1,20 @@
 #!/bin/bash
 
 #=================================================
-# GENERIC STARTING
+# GENERIC START
 #=================================================
 # IMPORT GENERIC HELPERS
 #=================================================
 
-source .fonctions
+source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# MANAGE FAILURE OF THE SCRIPT
+# MANAGE SCRIPT FAILURE
 #=================================================
 
-ynh_check_error	# Active trap pour arrêter le script si une erreur est détectée.
+# Exit if an error occurs during the execution of the script
+ynh_abort_if_errors
 
 #=================================================
 # RETRIEVE ARGUMENTS FROM THE MANIFEST
@@ -21,147 +22,153 @@ ynh_check_error	# Active trap pour arrêter le script si une erreur est détect�
 
 domain=$YNH_APP_ARG_DOMAIN
 path_url=$YNH_APP_ARG_PATH
-is_public=$YNH_APP_ARG_IS_PUBLIC
 admin_name=$YNH_APP_ARG_ADMIN_NAME
-admin_pass=$YNH_APP_ARG_ADMIN_PASS
-admin_email=$YNH_APP_ARG_ADMIN_EMAIL
-website_title=$YNH_APP_ARG_WEBSITE_TITLE
+is_public=$YNH_APP_ARG_IS_PUBLIC
 language=$YNH_APP_ARG_LANGUAGE
-
+admin_pass=$YNH_APP_ARG_ADMIN_PASS
+website_title=$YNH_APP_ARG_WEBSITE_TITLE
+admin_email=$(ynh_user_get_info $admin_name 'mail')
 
 app=$YNH_APP_INSTANCE_NAME
 
 #=================================================
-# CHECK IF THE APP CAN BE INSTALLED WITH THIS ARGS
+# CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
 #=================================================
+ynh_print_info "Validating installation parameters..."
 
-CHECK_USER "$admin_name"	# Vérifie la validité de l'user admin
-path_url=$(ynh_normalize_url_path $path_url)	# Vérifie et corrige la syntaxe du path.
-CHECK_DOMAINPATH	# Vérifie la disponibilité du path et du domaine.
-CHECK_FINALPATH	# Vérifie que le dossier de destination n'est pas déjà utilisé.
+final_path=/var/www/$app
+test ! -e "$final_path" || ynh_die "This path already contains a folder"
+
+# Normalize the url path syntax
+path_url=$(ynh_normalize_url_path $path_url)
+
+# Register (book) web path
+ynh_webpath_register $app $domain $path_url
 
 #=================================================
 # STORE SETTINGS FROM MANIFEST
 #=================================================
+ynh_print_info "Storing installation settings..."
 
-user="$app"
-ynh_app_setting_set "$app" is_public "$is_public"
-ynh_app_setting_set "$app" admin_pass "$admin_pass"
-ynh_app_setting_set "$app" admin_name "$admin_name"
-ynh_app_setting_set "$app" admin_email "$admin_email"
-ynh_app_setting_set "$app" language "$language"
-ynh_app_setting_set "$app" website_title "$website_title"
-
-#=================================================
-# Check password strength
-#=================================================
-
-[[ ${#admin_pass} -gt 5 ]] || ynh_die \
-"The password is too weak, it must be longer than 5 characters"
+ynh_app_setting_set $app domain $domain
+ynh_app_setting_set $app path $path_url
+ynh_app_setting_set $app admin_name $admin_name
+ynh_app_setting_set $app is_public $is_public
+ynh_app_setting_set $app language $language
+ynh_app_setting_set $app admin_email $admin_email
+ynh_app_setting_set $app website_title $website_title
 
 #=================================================
 # STANDARD MODIFICATIONS
 #=================================================
-# CREATE A SQL BDD
+# CREATE A MYSQL DATABASE
 #=================================================
+ynh_print_info "Creating a MySQL database..."
 
-db_name=$app
-db_user=$app
-db_pass=$(ynh_string_random)
-ynh_mysql_create_db "$db_name" "$db_user" "$db_pass"
-ynh_app_setting_set "$app" db_name "$db_name"
-ynh_app_setting_set "$app" db_pass "$db_pass"
-ynh_app_setting_set "$app" db_user "$db_user"
-ynh_app_setting_set "$app" mysqlpwd "$db_pass"
+db_name=$(ynh_sanitize_dbid $app)
+ynh_app_setting_set $app db_name $db_name
+ynh_mysql_setup_db $db_name $db_name
+
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
+ynh_print_info "Setting up source files..."
 
-final_path=/var/www/$app
 ynh_app_setting_set $app final_path $final_path
-SETUP_SOURCE	# Télécharge la source, décompresse et copie dans $final_path
-
-#=================================================
-# PHP-FPM CONFIGURATION
-#=================================================
-
-POOL_FPM
-
-#=================================================
-# SPECIFIC SETUP
-#=================================================
-# LANGUAGE
-#=================================================
-if [ $language = "En" ]
-then
-    language=en_GB
-elif [ $language = "Fr" ] 
-then
-    language=fr_FR
-elif [ $language = "De" ] 
-then
-    language=de_DE
-elif [ $language = "Pt" ] 
-then
-    language=pt_PT
-else 
-    ynh_die "Language is no available"
-fi
-
-
-#================================================
-# Installation : Get Composer:
-#=================================================
-echo "The installation can take long. So be patient ! :)"
-pushd $final_path
-sudo php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-sudo php -r "if (hash_file('SHA384', 'composer-setup.php') === '669656bab3166a7aff8a7506b8cb2d1c292f042046c5a994c43155c0be6190fa0355160742ab2e1c88d40d5be660b410') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-sudo php composer-setup.php
-sudo php -r "unlink('composer-setup.php');"
-sudo ./composer.phar install
-sudo ./concrete/bin/concrete5 c5:install --db-server=localhost \
-                                         --db-username=$db_user \
-                                         --db-password=$db_pass \
-                                         --db-database=$db_name \
-                                         --site="'$website_title'" \
-                                         --admin-email="'$admin_email'" \
-                                         --admin-password=$admin_pass \
-                                         --language=$language
-popd
-
-#=================================================
-# Set permissions
-#=================================================
-
-sudo chown www-data:www-data $final_path -R
-sudo chmod 777 $final_path -R
-
+# Download, check integrity, uncompress and patch the source from app.src
+ynh_setup_source "$final_path"
 
 #=================================================
 # NGINX CONFIGURATION
 #=================================================
+ynh_print_info "Configuring nginx web server..."
 
-nginxconf="../conf/nginx.conf"
-# Copy and set nginx configuration
-sed -i "s@{PATH}@${path_url}@g"        $nginxconf
-sed -i "s@{LOCATION}@${path_url:-/}@g" $nginxconf
-sed -i "s@{DESTDIR}@${final_path}@g"  $nginxconf
-sed -i "s@{POOLNAME}@${app}@g"     $nginxconf
-sudo cp ../conf/nginx.conf /etc/nginx/conf.d/${domain}.d/${app}.conf
+# Create a dedicated nginx config
+ynh_add_nginx_config
+
+#=================================================
+# CREATE DEDICATED USER
+#=================================================
+ynh_print_info "Configuring system user..."
+
+# Create a system user
+ynh_system_user_create $app
+
+#=================================================
+# PHP-FPM CONFIGURATION
+#=================================================
+ynh_print_info "Configuring php-fpm..."
+
+# Create a dedicated php-fpm config
+ynh_add_fpm_config
+
+#=================================================
+# SPECIFIC SETUP
+#================================================
+# CONCRETE5 INSTALLATION
+#=================================================
+ynh_print_info "Concrete5 Installation, the installation can take long. So be patient ! :)"
+
+pushd $final_path
+        sudo php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+        sudo php composer-setup.php
+        sudo php -r "unlink('composer-setup.php');"
+        sudo ./composer.phar install
+        sudo ./concrete/bin/concrete5 c5:install --db-server=localhost \
+                                        --db-database=$db_name \
+                                        --db-username=$db_name \
+                                        --db-password=$db_pwd \
+                                        --site="$website_title" \
+                                        --admin-email="$admin_email" \
+                                        --admin-password="$admin_pass" \
+                                        --language=$language \
+                                        --site-locale=$language \
+                                        --verbose \
+                                        --no-interaction \
+                                        --allow-as-root
+popd
+
+#=================================================
+# GENERIC FINALIZATION
+#=================================================
+# SECURE FILES AND DIRECTORIES
+#=================================================
+
+# Set permissions to app files
+chown -R $app: $final_path
 
 #=================================================
 # SETUP SSOWAT
 #=================================================
+ynh_print_info "Configuring SSOwat..."
 
-# Make app private if necessary
-ynh_app_setting_set "$app" is_public "$is_public"
-if [ "$is_public" = "Yes" ];
+# Make app public if necessary
+if [ $is_public -eq 1 ]
 then
-  ynh_app_setting_set "$app" unprotected_uris "/"
+	# unprotected_uris allows SSO credentials to be passed anyway.
+	ynh_app_setting_set $app unprotected_uris "/"
 fi
 
 #=================================================
 # RELOAD NGINX
 #=================================================
+ynh_print_info "Reloading nginx web server..."
 
-sudo service nginx reload
+systemctl reload nginx
+
+#=================================================
+# SEND A README FOR THE ADMIN
+#=================================================
+
+# WARNING : theses command are used in INSTALL, RESTORE
+# For any update do it in all files
+
+message="To connect to your Concrete Website go to https://$domain$path_url/ with Username: admin"
+
+ynh_send_readme_to_admin "$message"
+
+#=================================================
+# END OF SCRIPT
+#=================================================
+
+ynh_print_info "Installation of $app completed"

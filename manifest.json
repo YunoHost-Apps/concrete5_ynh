@@ -2,23 +2,25 @@
     "name": "Concrete5",
     "id": "concrete5",
     "packaging_format": 1,
-    "requirements": {
-        "yunohost": ">=2.6"
-    },
     "description": {
         "en": "Create a modern Website",
         "fr": "Créer un site web moderne avec un CMS moderne"
     },
-    "license": "MIT",
+    "version": "8.4.5~ynh1",
     "url": "www.concrete5.org",
+    "license": "MIT",
     "maintainer": {
         "name": "frju365",
         "email": "win10@tutanota.com"
     },
+    "requirements": {
+        "yunohost": ">= 3.4"
+    },
     "multi_instance": true,
     "services": [
         "nginx",
-        "php5-fpm"
+        "php7.0-fpm",
+        "mysql"
     ],
     "arguments": {
         "install" : [
@@ -29,7 +31,7 @@
                     "en": "Choose a domain for Concrete5",
                     "fr": "Choisissez un domaine pour Concrete5"
                 },
-                "example": "domain.org"
+                "example": "example.com"
             },
             {
                 "name": "path",
@@ -42,60 +44,55 @@
                 "default": "/concrete"
             },
             {
-                "name": "is_public",
-                "ask": {
-                    "en": "Is it a public Concrete5 site ?",
-                    "fr": "Est-ce un site public ?"
-                },
-                "choices": ["Yes", "No"],
-                "default": "Yes"
-            },
-            {
                 "name": "admin_name",
                 "type": "user",
                 "ask": {
-                    "en": "Choose the Concrete5 administrator (must be an existing YunoHost user)",
-                    "fr": "Choisissez l'administrateur de Concrete5 (doit être un utilisateur YunoHost existant)"
+                    "en": "Choose an admin user",
+                    "fr": "Choisissez l’administrateur"
                 },
-                "example": "homer"
+                "example": "johndoe"
+            },
+            {
+                "name": "is_public",
+                "type": "boolean",
+                "ask": {
+                    "en": "Is it a public application?",
+                    "fr": "Est-ce une application publique ?"
+                },
+                "default": true
+            },
+            {
+                "name": "language",
+                "type": "string",
+                "ask": {
+                    "en": "Choose the application language",
+                    "fr": "Choisissez la langue de l'application"
+                },
+                "choices": ["en_US", "fr_FR", "de_DE", "pt_PT"],
+                "default": "en_US"
             },
             {
                 "name": "admin_pass",
                 "type": "password",
                 "ask": {
-                    "en": "Set the password for the Admin user ≥ 5 character",
-                    "fr": "Définissez le mot de passe pour l'Administrateur. ≥ cinq charactères"
+                    "en": "Set the administrator password",
+                    "fr": "Définissez le mot de passe administrateur"
                 },
-                "example": "myreallystrengthpassword"
-            },
-            {
-                "name": "admin_email",
-                "type": "email",
-                "ask": {
-                    "en": "Your mail address.",
-                    "fr": "Votre adresse mail."
-                },
-                "exemple": "abc@efg.hi"
+                "help": {
+                    "en": "Use the help field to add an information for the admin about this question.",
+                    "fr": "Utilisez le champ aide pour ajouter une information à l'intention de l'administrateur à propos de cette question."
+				},
+                "example": "Choose a password"
             },
             {
                 "name": "website_title",
-                "type": "title",
+                "type": "string",
                 "ask": {
                     "en": "Your website's title.",
                     "fr": "Le titre de votre site."
                 },
-                "exemple": "MY BIG WEBSITE"
-            },
-            {
-                "name": "language",
-                "ask": {
-                    "en": "Default language to be used in your website admin",
-                    "fr": "Langue par défaut à utiliser dans votre interface d'administration"
-                },
-                "choices": [
-                    "En", "Fr", "De", "Pt"
-                ],
-                "default": "English"
+                "exemple": "MY BIG WEBSITE",
+                "default": "Concrete"
             }
         ]
     }

@@ -7,6 +7,7 @@
 #=================================================
 
 source _common.sh
+source ynh_composer__2
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -119,8 +120,16 @@ ynh_add_fpm_config
 #=================================================
 # SPECIFIC UPGRADE
 #=================================================
+# UPGRADE COMPOSER
+#=================================================
+ynh_print_info --message="Upgrading Composer..."
+
+ynh_install_composer
+
+#=================================================
 # UPGRADE CONCRETE
 #=================================================
+ynh_print_info --message="Upgrading Concrete..."
 
 pushd $final_path
     sudo ./concrete/bin/concrete5 c5:update --rerun --verbose --allow-as-root

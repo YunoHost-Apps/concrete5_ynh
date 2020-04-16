@@ -7,6 +7,7 @@
 #=================================================
 
 source _common.sh
+source ynh_composer__2
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -102,17 +103,20 @@ ynh_add_fpm_config
 
 #=================================================
 # SPECIFIC SETUP
+#=================================================
+# INSTALL COMPOSER
+#=================================================
+ynh_print_info --message="Installing Composer..."
+
+ynh_install_composer
+
 #================================================
 # CONCRETE5 INSTALLATION
 #=================================================
 ynh_print_info --message="Concrete5 Installation, the installation can take long. So be patient ! :)"
 
 pushd $final_path
-        php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-        php composer-setup.php
-        php -r "unlink('composer-setup.php');"
-        php ./composer.phar install
-        sudo ./concrete/bin/concrete5 c5:install --db-server=localhost \
+        ./concrete/bin/concrete5 c5:install --db-server=localhost \
                                         --db-database=$db_name \
                                         --db-username=$db_name \
                                         --db-password=$db_pwd \

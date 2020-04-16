@@ -33,7 +33,6 @@ LDAP and HTTP auth are not supported
 
 * x86-64b - [![Build Status](https://ci-apps.yunohost.org/ci/logs/concrete5%20%28Community%29.svg)](https://ci-apps.yunohost.org/ci/apps/concrete5/)
 * ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/concrete5%20%28Community%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/concrete5/)
-* Jessie x86-64b - [![Build Status](https://ci-stretch.nohost.me/ci/logs/concrete5%20%28Community%29.svg)](https://ci-stretch.nohost.me/ci/apps/concrete5/)
 
 ## Links
 

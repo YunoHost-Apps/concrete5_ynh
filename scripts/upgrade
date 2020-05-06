@@ -7,6 +7,8 @@
 #=================================================
 
 source _common.sh
+source ynh_add_extra_apt_repos__3
+source ynh_install_php__3
 source ynh_composer__2
 source /usr/share/yunohost/helpers
 
@@ -82,6 +84,14 @@ path_url=$(ynh_normalize_url_path $path_url)
 #=================================================
 # STANDARD UPGRADE STEPS
 #=================================================
+# NGINX CONFIGURATION
+#=================================================
+ynh_print_info --message="Upgrading nginx web server configuration..."
+
+# Create a dedicated nginx config
+ynh_add_nginx_config
+
+#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 
@@ -94,12 +104,29 @@ then
 fi
 
 #=================================================
-# NGINX CONFIGURATION
+# UPGRADE PHP7.3
 #=================================================
-ynh_print_info --message="Upgrading nginx web server configuration..."
 
-# Create a dedicated nginx config
-ynh_add_nginx_config
+if [ "$(lsb_release --codename --short)" = "buster" ]; then
+	pkg_dependencies="$pkg_dependencies $extra_pkg_dependencies"
+else
+	if [ "$(ynh_app_setting_get --app=$app --key=php_version)" != "7.3" ]; then
+		ynh_print_info --message="Upgrading PHP7.3..."
+		ynh_remove_fpm_config
+		ynh_remove_app_dependencies
+		ynh_remove_php
+		ynh_install_php --phpversion="7.3" --package="$extra_pkg_dependencies"
+	else
+		ynh_install_php --phpversion="7.3" --package="$extra_pkg_dependencies"
+	fi
+fi
+
+#=================================================
+# UPGRADE DEPENDENCIES
+#=================================================
+ynh_print_info --message="Upgrading dependencies..."
+
+ynh_install_app_dependencies $pkg_dependencies
 
 #=================================================
 # CREATE DEDICATED USER
@@ -115,7 +142,7 @@ ynh_system_user_create --username=$app
 ynh_print_info --message="Upgrading php-fpm configuration..."
 
 # Create a dedicated php-fpm config
-ynh_add_fpm_config
+ynh_add_fpm_config --phpversion="7.3"
 
 #=================================================
 # SPECIFIC UPGRADE
@@ -124,12 +151,12 @@ ynh_add_fpm_config
 #=================================================
 ynh_print_info --message="Upgrading Composer..."
 
-ynh_install_composer
+ynh_install_composer --phpversion="7.3" --workdir="$final_path"
 
 #=================================================
-# UPGRADE CONCRETE
+# UPGRADE CONCRETE5
 #=================================================
-ynh_print_info --message="Upgrading Concrete..."
+ynh_print_info --message="Upgrading Concrete5..."
 
 pushd $final_path
     sudo ./concrete/bin/concrete5 c5:update --rerun --verbose --allow-as-root
@@ -140,6 +167,7 @@ popd
 #=================================================
 # SECURE FILES AND DIRECTORIES
 #=================================================
+ynh_print_info --message="Securing files and directories..."
 
 # Set permissions on app files
 chown -R $app: $final_path

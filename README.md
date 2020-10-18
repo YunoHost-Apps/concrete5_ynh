@@ -1,4 +1,4 @@
-# concrete5_ynh
+# Concrete5 for YunoHost
 
 [![Integration level](https://dash.yunohost.org/integration/concrete5.svg)](https://dash.yunohost.org/appci/app/concrete5) ![](https://ci-apps.yunohost.org/ci/badges/concrete5.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/concrete5.maintain.svg)  
 [![Install concrete5 with YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=concrete5)

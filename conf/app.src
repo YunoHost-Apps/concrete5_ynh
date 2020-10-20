@@ -1,5 +1,5 @@
-SOURCE_URL=https://github.com/concrete5/concrete5/archive/8.4.5.tar.gz
-SOURCE_SUM=a8708e6d55dba3bcf6aeb2a377eaa851650cb8634343c7ce4e88045fd58d565e
+SOURCE_URL=https://github.com/concrete5/concrete5/archive/8.5.2.tar.gz
+SOURCE_SUM=60c290faba9ecece8bc61bbec485e0bd1697af58f9e6f247eceb2241bfa2f75a
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
 SOURCE_IN_SUBDIR=true

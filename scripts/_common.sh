@@ -1,6 +1,17 @@
 #!/bin/bash
 
 #=================================================
+# COMMON VARIABLES
+#=================================================
+
+# dependencies used by the app
+pkg_dependencies="curl"
+
+YNH_PHP_VERSION="7.3"
+
+extra_php_dependencies="php${YNH_PHP_VERSION}-pdo php${YNH_PHP_VERSION}-mysql php${YNH_PHP_VERSION}-dom php${YNH_PHP_VERSION}-simplexml php${YNH_PHP_VERSION}-iconv php${YNH_PHP_VERSION}-gd php${YNH_PHP_VERSION}-fileinfo php${YNH_PHP_VERSION}-mbstring php${YNH_PHP_VERSION}-curl php${YNH_PHP_VERSION}-zip"
+
+#=================================================
 # PERSONAL HELPERS
 #=================================================
 

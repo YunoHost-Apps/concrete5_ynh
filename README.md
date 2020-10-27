@@ -1,10 +1,10 @@
-# concrete5_ynh
+# Concrete5 for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/concrete5.svg)](https://dash.yunohost.org/appci/app/concrete5)  
+[![Integration level](https://dash.yunohost.org/integration/concrete5.svg)](https://dash.yunohost.org/appci/app/concrete5) ![](https://ci-apps.yunohost.org/ci/badges/concrete5.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/concrete5.maintain.svg)  
 [![Install concrete5 with YunoHost](https://install-app.yunohost.org/install-with-yunohost.png)](https://install-app.yunohost.org/?app=concrete5)
 
-> *This package allow you to install concrete5 quickly and simply on a YunoHost server.  
-If you don't have YunoHost, please see [here](https://yunohost.org/#/install) to know how to install and enjoy it.*
+> *This package allows you to install concrete5 quickly and simply on a YunoHost server.  
+If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/install) to learn how to install it.*
 
 ## Overview
 Concrete5 is a modern CMS.
@@ -17,7 +17,7 @@ Features :
 * Marketing tools
 * **and more**...
 
-**Shipped version:** 8.4.5
+**Shipped version:** 8.5.2
 
 ## Documentation
 
@@ -31,9 +31,8 @@ LDAP and HTTP auth are not supported
 
 #### Supported architectures
 
-* x86-64b - [![Build Status](https://ci-apps.yunohost.org/ci/logs/concrete5%20%28Community%29.svg)](https://ci-apps.yunohost.org/ci/apps/concrete5/)
-* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/concrete5%20%28Community%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/concrete5/)
-* Jessie x86-64b - [![Build Status](https://ci-stretch.nohost.me/ci/logs/concrete5%20%28Community%29.svg)](https://ci-stretch.nohost.me/ci/apps/concrete5/)
+* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/concrete5%20%28Apps%29.svg)](https://ci-apps.yunohost.org/ci/apps/concrete5/)
+* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/concrete5%20%28Apps%29.svg)](https://ci-apps-arm.yunohost.org/ci/apps/concrete5/)
 
 ## Links
 
@@ -44,11 +43,10 @@ LDAP and HTTP auth are not supported
 
 ---
 
-Developers info
+Developer info
 ----------------
 
-**Only if you want to use a testing branch for coding, instead of merging directly into master.**
-Please do your pull request to the [testing branch](https://github.com/YunoHost-Apps/concrete5_ynh/tree/testing).
+Please send your pull request to the [testing branch](https://github.com/YunoHost-Apps/concrete5_ynh/tree/testing).
 
 To try the testing branch, please proceed like that.
 ```

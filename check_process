@@ -7,7 +7,7 @@
 	; Manifest
 		domain="domain.tld"	(DOMAIN)
 		path="/path"	(PATH)
-		admin_name="john"   (USER)
+		admin_name="package_checker"   (USER)
 		language="fr_FR"
 		is_public=1	(PUBLIC|public=1|private=0)
 		admin_pass="pass"
@@ -25,6 +25,3 @@
 		multi_instance=1
 		port_already_use=0
 		change_url=1
-;;; Options
-Email=
-Notification=none

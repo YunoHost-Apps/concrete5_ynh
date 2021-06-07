@@ -27,19 +27,11 @@
             {
                 "name": "domain",
                 "type": "domain",
-                "ask": {
-                    "en": "Choose a domain for Concrete5",
-                    "fr": "Choisissez un domaine pour Concrete5"
-                },
                 "example": "example.com"
             },
             {
                 "name": "path",
                 "type": "path",
-                "ask": {
-                    "en": "Choose a path for Concrete5",
-                    "fr": "Choisissez un chemin pour Concrete5"
-                },
                 "example": "/concrete",
                 "default": "/concrete"
             },
@@ -55,10 +47,6 @@
             {
                 "name": "is_public",
                 "type": "boolean",
-                "ask": {
-                    "en": "Is it a public application?",
-                    "fr": "Est-ce une application publique ?"
-                },
                 "default": true
             },
             {
@@ -78,10 +66,6 @@
                     "en": "Set the administrator password",
                     "fr": "Définissez le mot de passe administrateur"
                 },
-                "help": {
-                    "en": "Use the help field to add an information for the admin about this question.",
-                    "fr": "Utilisez le champ aide pour ajouter une information à l'intention de l'administrateur à propos de cette question."
-				},
                 "example": "Choose a password"
             },
             {
@@ -91,7 +75,6 @@
                     "en": "Your website's title.",
                     "fr": "Le titre de votre site."
                 },
-                "exemple": "MY BIG WEBSITE",
                 "default": "Concrete"
             }
         ]

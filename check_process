@@ -1,17 +1,12 @@
-# See here for more information
-# https://github.com/YunoHost/package_check#syntax-check_process-file
-
-# Move this file from check_process.default to check_process when you have filled it.
-
 ;; Test complet
 	; Manifest
-		domain="domain.tld"	(DOMAIN)
-		path="/path"	(PATH)
-		admin_name="package_checker"   (USER)
+		domain="domain.tld"
+		path="/path"
+		admin="john"
 		language="fr_FR"
-		is_public=1	(PUBLIC|public=1|private=0)
-		admin_pass="pass"
-		website_title="site"		
+		is_public=1
+		password="1Strong-Password"
+		website_title="site"
 	; Checks
 		pkg_linter=1
 		setup_sub_dir=1
@@ -20,8 +15,16 @@
 		setup_private=1
 		setup_public=1
 		upgrade=1
-		#upgrade=1	from_commit=5f92cc818503d86aeb6920ccbba59eb91dc5423a
+		# 8.5.2~ynh1
+		upgrade=1	from_commit=7c7c41cbc261757781e420004186012b5f455f67
 		backup_restore=1
 		multi_instance=1
 		port_already_use=0
 		change_url=1
+;;; Options
+Email=
+Notification=none
+;;; Upgrade options
+	; commit=7c7c41cbc261757781e420004186012b5f455f67
+		name=8.5.2~ynh1
+		manifest_arg=domain=DOMAIN&path=PATH&admin_name=USER&language=fr_FR&is_public=1&password=1Strong-Password&website_title=666&

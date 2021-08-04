@@ -66,9 +66,9 @@
             {
                 "name": "password",
                 "type": "password",
-                "help": {
-                    "en": "Use the help field to add an information for the admin about this question.",
-                    "fr": "Utilisez le champ aide pour ajouter une information à l'intention de l'administrateur à propos de cette question."
+                "ask": {
+                    "en": "Set the administrator password",
+                    "fr": "Définissez le mot de passe administrateur"
                 },
                 "example": "Choose a password"
             },
@@ -79,7 +79,6 @@
                     "en": "Your website's title.",
                     "fr": "Le titre de votre site."
                 },
-                "exemple": "MY BIG WEBSITE",
                 "default": "Concrete"
             }
         ]

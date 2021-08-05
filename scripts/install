@@ -144,6 +144,10 @@ pushd $final_path
                                         --allow-as-root
 popd
 
+chmod 750 "$final_path"
+chmod -R o-rwx "$final_path"
+chown -R $app:www-data "$final_path"
+
 #=================================================
 # GENERIC FINALIZATION
 #=================================================

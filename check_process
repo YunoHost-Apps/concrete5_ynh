@@ -1,10 +1,10 @@
 ;; Test complet
 	; Manifest
-		domain="domain.tld"
-		path="/path"
-		admin="john"
+		domain="domain.tld"	(DOMAIN)
+		path="/path"	(PATH)
+		admin="john"   (USER)
 		language="fr_FR"
-		is_public=1
+		is_public=1	(PUBLIC|public=1|private=0)
 		password="1Strong-Password"
 		website_title="site"
 	; Checks
@@ -27,4 +27,4 @@ Notification=none
 ;;; Upgrade options
 	; commit=7c7c41cbc261757781e420004186012b5f455f67
 		name=8.5.2~ynh1
-		manifest_arg=domain=DOMAIN&path=PATH&admin_name=john&language=fr_FR&is_public=1&password=1Strong-Password&website_title=666&
+		manifest_arg=domain=DOMAIN&path=PATH&admin_name=USER&language=fr_FR&is_public=1&admin_pass=1Strong-Password&website_title=666&

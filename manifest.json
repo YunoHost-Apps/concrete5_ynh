@@ -6,20 +6,28 @@
         "en": "Create a modern Website",
         "fr": "Créer un site web moderne avec un CMS moderne"
     },
-    "version": "8.5.2~ynh1",
+    "version": "8.5.2~ynh2",
     "url": "www.concrete5.org",
+    "upstream": {
+        "license": "MIT",
+        "website": "https://www.concrete5.org/",
+        "demo": "https://demo.example.com",
+        "admindoc": "https://documentation.concrete5.org/",
+        "userdoc": "https://yunohost.org/apps",
+        "code": "https://github.com/concrete5/concrete5"
+    },
     "license": "MIT",
     "maintainer": {
         "name": "frju365",
         "email": "win10@tutanota.com"
     },
     "requirements": {
-        "yunohost": ">= 3.8"
+        "yunohost": ">= 4.1.3"
     },
     "multi_instance": true,
     "services": [
         "nginx",
-        "php7.0-fpm",
+        "php7.3-fpm",
         "mysql"
     ],
     "arguments": {
@@ -36,12 +44,8 @@
                 "default": "/concrete"
             },
             {
-                "name": "admin_name",
+                "name": "admin",
                 "type": "user",
-                "ask": {
-                    "en": "Choose an admin user",
-                    "fr": "Choisissez l’administrateur"
-                },
                 "example": "johndoe"
             },
             {
@@ -60,7 +64,7 @@
                 "default": "en_US"
             },
             {
-                "name": "admin_pass",
+                "name": "password",
                 "type": "password",
                 "ask": {
                     "en": "Set the administrator password",

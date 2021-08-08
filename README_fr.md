@@ -13,7 +13,7 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 
 Créer un site web moderne avec un CMS moderne
 
-**Version incluse :** 8.5.2~ynh1
+**Version incluse :** 8.5.2~ynh2
 
 **Démo :** https://demo.example.com
 

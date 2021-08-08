@@ -17,7 +17,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 Create a modern Website
 
-**Shipped version:** 8.5.2~ynh1
+**Shipped version:** 8.5.2~ynh2
 
 **Demo:** https://demo.example.com
 

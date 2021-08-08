@@ -3,17 +3,15 @@
     "id": "concrete5",
     "packaging_format": 1,
     "description": {
-        "en": "Create a modern Website",
-        "fr": "Créer un site web moderne avec un CMS moderne"
+        "en": "Open Source Content Management System for Teams",
+        "fr": "Système de gestion de contenu Open Source pour les équipes"
     },
     "version": "8.5.2~ynh2",
     "url": "www.concrete5.org",
     "upstream": {
         "license": "MIT",
         "website": "https://www.concrete5.org/",
-        "demo": "https://demo.example.com",
         "admindoc": "https://documentation.concrete5.org/",
-        "userdoc": "https://yunohost.org/apps",
         "code": "https://github.com/concrete5/concrete5"
     },
     "license": "MIT",
@@ -66,10 +64,6 @@
             {
                 "name": "password",
                 "type": "password",
-                "ask": {
-                    "en": "Set the administrator password",
-                    "fr": "Définissez le mot de passe administrateur"
-                },
                 "example": "Choose a password"
             },
             {

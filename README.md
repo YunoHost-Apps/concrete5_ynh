@@ -15,11 +15,11 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 ## Overview
 
-Create a modern Website
+Open Source Content Management System for Teams
 
 **Shipped version:** 8.5.2~ynh2
 
-**Demo:** https://demo.example.com
+
 
 ## Disclaimers / important information
 
@@ -29,7 +29,6 @@ Create a modern Website
 ## Documentation and resources
 
 * Official app website: https://www.concrete5.org/
-* Official user documentation: https://yunohost.org/apps
 * Official admin documentation: https://documentation.concrete5.org/
 * Upstream app code repository: https://github.com/concrete5/concrete5
 * YunoHost documentation for this app: https://yunohost.org/app_concrete5

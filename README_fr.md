@@ -11,11 +11,11 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 
 ## Vue d'ensemble
 
-Créer un site web moderne avec un CMS moderne
+Système de gestion de contenu Open Source pour les équipes
 
 **Version incluse :** 8.5.2~ynh2
 
-**Démo :** https://demo.example.com
+
 
 ## Avertissements / informations importantes
 
@@ -25,7 +25,6 @@ Créer un site web moderne avec un CMS moderne
 ## Documentations et ressources
 
 * Site officiel de l'app : https://www.concrete5.org/
-* Documentation officielle utilisateur : https://yunohost.org/apps
 * Documentation officielle de l'admin : https://documentation.concrete5.org/
 * Dépôt de code officiel de l'app : https://github.com/concrete5/concrete5
 * Documentation YunoHost pour cette app : https://yunohost.org/app_concrete5

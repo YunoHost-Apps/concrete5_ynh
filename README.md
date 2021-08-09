@@ -17,7 +17,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 Open Source Content Management System for Teams
 
-**Shipped version:** 8.5.2~ynh2
+**Shipped version:** 8.5.5~ynh1
 
 
 

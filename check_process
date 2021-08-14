@@ -27,4 +27,3 @@ Notification=none
 ;;; Upgrade options
 	; commit=7c7c41cbc261757781e420004186012b5f455f67
 		name=8.5.2~ynh1
-		manifest_arg=domain=DOMAIN&path=PATH&admin_name=USER&language=fr_FR&is_public=1&admin_pass=1Strong-Password&website_title=666&

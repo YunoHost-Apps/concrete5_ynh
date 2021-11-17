@@ -13,7 +13,7 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 
 Système de gestion de contenu Open Source pour les équipes
 
-**Version incluse :** 8.5.5~ynh1
+**Version incluse :** 9.0.1~ynh1
 
 
 

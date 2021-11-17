@@ -6,7 +6,7 @@
         "en": "Open Source Content Management System for Teams",
         "fr": "Système de gestion de contenu Open Source pour les équipes"
     },
-    "version": "8.5.5~ynh1",
+    "version": "9.0.1~ynh1",
     "url": "www.concrete5.org",
     "upstream": {
         "license": "MIT",
@@ -20,7 +20,7 @@
         "email": "win10@tutanota.com"
     },
     "requirements": {
-        "yunohost": ">= 4.2.0"
+        "yunohost": ">= 4..0"
     },
     "multi_instance": true,
     "services": [
@@ -32,8 +32,7 @@
         "install" : [
             {
                 "name": "domain",
-                "type": "domain",
-                "example": "example.com"
+                "type": "domain"
             },
             {
                 "name": "path",
@@ -43,8 +42,7 @@
             },
             {
                 "name": "admin",
-                "type": "user",
-                "example": "johndoe"
+                "type": "user"
             },
             {
                 "name": "is_public",
@@ -63,8 +61,7 @@
             },
             {
                 "name": "password",
-                "type": "password",
-                "example": "Choose a password"
+                "type": "password"
             },
             {
                 "name": "website_title",

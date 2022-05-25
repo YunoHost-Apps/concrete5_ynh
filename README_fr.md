@@ -5,7 +5,7 @@ It shall NOT be edited by hand.
 
 # Concrete5 pour YunoHost
 
-[![Niveau d'intégration](https://dash.yunohost.org/integration/concrete5.svg)](https://dash.yunohost.org/appci/app/concrete5) ![Status du fonctionnement](https://ci-apps.yunohost.org/ci/badges/concrete5.status.svg) ![Status de maintenance](https://ci-apps.yunohost.org/ci/badges/concrete5.maintain.svg)  
+[![Niveau d'intégration](https://dash.yunohost.org/integration/concrete5.svg)](https://dash.yunohost.org/appci/app/concrete5) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/concrete5.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/concrete5.maintain.svg)  
 [![Installer Concrete5 avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=concrete5)
 
 *[Read this readme in english.](./README.md)*

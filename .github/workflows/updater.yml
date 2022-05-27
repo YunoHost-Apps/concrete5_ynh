@@ -47,3 +47,4 @@ jobs:
           body: |
             Upgrade to v${{ env.VERSION }}
           draft: false
+

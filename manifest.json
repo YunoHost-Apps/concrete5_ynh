@@ -6,7 +6,7 @@
         "en": "Open Source Content Management System for Teams",
         "fr": "Système de gestion de contenu Open Source pour les équipes"
     },
-    "version": "9.0.1~ynh2",
+    "version": "9.1.1~ynh1",
     "url": "www.concrete5.org",
     "upstream": {
         "license": "MIT",
@@ -52,7 +52,12 @@
                     "en": "Choose the application language",
                     "fr": "Choisissez la langue de l'application"
                 },
-                "choices": ["en_US", "fr_FR", "de_DE", "pt_PT"],
+                "choices": [
+                    "en_US",
+                    "fr_FR",
+                    "de_DE",
+                    "pt_PT"
+                ],
                 "default": "en_US"
             },
             {

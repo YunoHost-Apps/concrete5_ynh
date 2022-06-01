@@ -26,7 +26,7 @@ Features :
 * **and more**...
 
 
-**Shipped version:** 9.0.1~ynh2
+**Shipped version:** 9.1.1~ynh1
 ## Disclaimers / important information
 
 * Any known limitations, constrains or stuff not working, such as (but not limited to):

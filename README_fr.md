@@ -26,7 +26,7 @@ Features :
 * **and more**...
 
 
-**Version incluse :** 9.0.1~ynh2
+**Version incluse :** 9.1.1~ynh1
 ## Avertissements / informations importantes
 
 * Any known limitations, constrains or stuff not working, such as (but not limited to):

@@ -1,7 +1,6 @@
-SOURCE_URL=https://github.com/concrete5/concrete5/archive/9.0.1.tar.gz
-SOURCE_SUM=0dc5d37da948c1b5bab4dc8291e9a97488cb53f521c8e56cf118008ae99f9e38
+SOURCE_URL=https://github.com/concretecms/concretecms/archive/refs/tags/9.1.1.tar.gz
+SOURCE_SUM=8880de7b391a041781270b3a74050b05572b5e536847eec85d8e566677e36c21
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
 SOURCE_IN_SUBDIR=true
 SOURCE_FILENAME=
-SOURCE_EXTRACT=true

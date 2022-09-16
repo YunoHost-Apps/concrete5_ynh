@@ -25,5 +25,3 @@
 Email=
 Notification=none
 ;;; Upgrade options
-	; commit=7c7c41cbc261757781e420004186012b5f455f67
-		name=8.5.2~ynh1

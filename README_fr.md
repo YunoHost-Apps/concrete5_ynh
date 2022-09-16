@@ -26,7 +26,8 @@ Features :
 * **and more**...
 
 
-**Version incluse :** 9.1.1~ynh1
+**Version incluse :** 9.1.1~ynh1
+
 ## Avertissements / informations importantes
 
 * Any known limitations, constrains or stuff not working, such as (but not limited to):
@@ -34,8 +35,8 @@ Features :
 
 ## Documentations et ressources
 
-* Site officiel de l'app : <https://www.concrete5.org/>
-* Documentation officielle de l'admin : <https://documentation.concrete5.org/>
+* Site officiel de l'app : <https://www.concrete5.org>
+* Documentation officielle de l'admin : <https://documentation.concrete5.org>
 * Dépôt de code officiel de l'app : <https://github.com/concrete5/concrete5>
 * Documentation YunoHost pour cette app : <https://yunohost.org/app_concrete5>
 * Signaler un bug : <https://github.com/YunoHost-Apps/concrete5_ynh/issues>

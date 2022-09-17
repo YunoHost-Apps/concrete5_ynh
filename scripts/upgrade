@@ -113,7 +113,7 @@ ynh_add_nginx_config
 #=================================================
 ynh_script_progression --message="Upgrading Composer..." --weight=1
 
-ynh_install_composer --phpversion="$phpversion" --workdir="$final_path"
+ynh_composer_exec --phpversion="$phpversion" --workdir="$final_path" --commands="update"
 
 #=================================================
 # UPGRADE CONCRETE5

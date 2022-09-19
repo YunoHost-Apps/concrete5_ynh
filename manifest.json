@@ -10,8 +10,8 @@
     "url": "www.concrete5.org",
     "upstream": {
         "license": "MIT",
-        "website": "https://www.concrete5.org/",
-        "admindoc": "https://documentation.concrete5.org/",
+        "website": "https://www.concrete5.org",
+        "admindoc": "https://documentation.concrete5.org",
         "code": "https://github.com/concrete5/concrete5"
     },
     "license": "MIT",
@@ -25,7 +25,7 @@
     "multi_instance": true,
     "services": [
         "nginx",
-        "php7.3-fpm",
+        "php7.4-fpm",
         "mysql"
     ],
     "arguments": {

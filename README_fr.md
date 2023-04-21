@@ -5,15 +5,16 @@ It shall NOT be edited by hand.
 
 # Concrete5 pour YunoHost
 
-[![Niveau d'intégration](https://dash.yunohost.org/integration/concrete5.svg)](https://dash.yunohost.org/appci/app/concrete5) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/concrete5.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/concrete5.maintain.svg)  
+[![Niveau d’intégration](https://dash.yunohost.org/integration/concrete5.svg)](https://dash.yunohost.org/appci/app/concrete5) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/concrete5.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/concrete5.maintain.svg)
+
 [![Installer Concrete5 avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=concrete5)
 
 *[Read this readme in english.](./README.md)*
 
-> *Ce package vous permet d'installer Concrete5 rapidement et simplement sur un serveur YunoHost.
-Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l'installer et en profiter.*
+> *Ce package vous permet d’installer Concrete5 rapidement et simplement sur un serveur YunoHost.
+Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l’installer et en profiter.*
 
-## Vue d'ensemble
+## Vue d’ensemble
 
 Concrete5 is a modern CMS.
 Features : 
@@ -26,17 +27,16 @@ Features :
 * **and more**...
 
 
-**Version incluse :** 9.1.1~ynh1
-
+**Version incluse :** 9.2.0~ynh1
 ## Avertissements / informations importantes
 
 * LDAP and HTTP auth are not supported
 
 ## Documentations et ressources
 
-* Site officiel de l'app : <https://www.concrete5.org>
-* Documentation officielle de l'admin : <https://documentation.concrete5.org>
-* Dépôt de code officiel de l'app : <https://github.com/concrete5/concrete5>
+* Site officiel de l’app : <https://www.concrete5.org>
+* Documentation officielle de l’admin : <https://documentation.concrete5.org>
+* Dépôt de code officiel de l’app : <https://github.com/concrete5/concrete5>
 * Documentation YunoHost pour cette app : <https://yunohost.org/app_concrete5>
 * Signaler un bug : <https://github.com/YunoHost-Apps/concrete5_ynh/issues>
 
@@ -52,4 +52,4 @@ ou
 sudo yunohost app upgrade concrete5 -u https://github.com/YunoHost-Apps/concrete5_ynh/tree/testing --debug
 ```
 
-**Plus d'infos sur le packaging d'applications :** <https://yunohost.org/packaging_apps>
+**Plus d’infos sur le packaging d’applications :** <https://yunohost.org/packaging_apps>

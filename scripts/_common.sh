@@ -6,10 +6,12 @@
 # PHP APP SPECIFIC
 #=================================================
 
-php_dependencies="php$YNH_DEFAULT_PHP_VERSION-pdo php$YNH_DEFAULT_PHP_VERSION-mysql php$YNH_DEFAULT_PHP_VERSION-dom php$YNH_DEFAULT_PHP_VERSION-simplexml php$YNH_DEFAULT_PHP_VERSION-iconv php$YNH_DEFAULT_PHP_VERSION-gd php$YNH_DEFAULT_PHP_VERSION-fileinfo php$YNH_DEFAULT_PHP_VERSION-mbstring php$YNH_DEFAULT_PHP_VERSION-curl php$YNH_DEFAULT_PHP_VERSION-zip"
+YNH_PHP_VERSION="7.4"
+
+php_dependencies="php$YNH_PHP_VERSION-pdo php$YNH_PHP_VERSION-mysql php$YNH_PHP_VERSION-dom php$YNH_PHP_VERSION-simplexml php$YNH_PHP_VERSION-iconv php$YNH_PHP_VERSION-gd php$YNH_PHP_VERSION-fileinfo php$YNH_PHP_VERSION-mbstring php$YNH_PHP_VERSION-curl php$YNH_PHP_VERSION-zip"
 
 # dependencies used by the app (must be on a single line)
-pkg_dependencies="curl $php_dependencies"
+pkg_dependencies="mariadb-server curl $php_dependencies"
 
 #=================================================
 # PERSONAL HELPERS

@@ -5,7 +5,8 @@ It shall NOT be edited by hand.
 
 # Concrete5 for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/concrete5.svg)](https://dash.yunohost.org/appci/app/concrete5) ![Working status](https://ci-apps.yunohost.org/ci/badges/concrete5.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/concrete5.maintain.svg)  
+[![Integration level](https://dash.yunohost.org/integration/concrete5.svg)](https://dash.yunohost.org/appci/app/concrete5) ![Working status](https://ci-apps.yunohost.org/ci/badges/concrete5.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/concrete5.maintain.svg)
+
 [![Install Concrete5 with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=concrete5)
 
 *[Lire ce readme en français.](./README_fr.md)*
@@ -26,8 +27,7 @@ Features :
 * **and more**...
 
 
-**Shipped version:** 9.1.1~ynh1
-
+**Shipped version:** 9.1.1~ynh2
 ## Disclaimers / important information
 
 * LDAP and HTTP auth are not supported

@@ -27,7 +27,7 @@ Features :
 * **and more**...
 
 
-**Version incluse :** 9.1.1~ynh1
+**Version incluse :** 9.1.1~ynh2
 ## Avertissements / informations importantes
 
 * LDAP and HTTP auth are not supported

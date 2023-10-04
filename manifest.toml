@@ -3,7 +3,7 @@
 packaging_format = 2
 
 id = "concrete5"
-name = "Concrete5"
+name = "Concrete CMS"
 description.en = "Open Source Content Management System for Teams"
 description.fr = "Système de gestion de contenu Open Source pour les équipes"
 
@@ -19,7 +19,7 @@ code = "https://github.com/concrete5/concrete5"
 cpe = "cpe:2.3:a:concrete5:concrete5"
 
 [integration]
-yunohost = ">= 4.3.0"
+yunohost = ">= 11.2.0"
 architectures = "all"
 multi_instance = true
 ldap = false
@@ -76,16 +76,17 @@ ram.runtime = "50M"
 
     [resources.apt]
     packages = [
-        "php7.4-pdo",
-        "php7.4-mysql",
-        "php7.4-dom",
-        "php7.4-simplexml",
-        "php7.4-iconv",
-        "php7.4-gd",
-        "php7.4-fileinfo",
-        "php7.4-mbstring",
-        "php7.4-curl",
-        "php7.4-zip",
+        "php8.2-pdo",
+        "php8.2-mysql",
+        "php8.2-dom",
+        "php8.2-simplexml",
+        "php8.2-iconv",
+        "php8.2-intl",
+        "php8.2-gd",
+        "php8.2-fileinfo",
+        "php8.2-mbstring",
+        "php8.2-curl",
+        "php8.2-zip",
         "mariadb-server",
         "curl",
     ]

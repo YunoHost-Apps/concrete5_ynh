@@ -17,7 +17,9 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 ## Overview
 
 Concrete5 is a modern CMS.
-Features : 
+
+### Features
+
 * SEO Tools
 * User mangament
 * Secure
@@ -28,10 +30,6 @@ Features :
 
 
 **Shipped version:** 9.1.1~ynh2
-## Disclaimers / important information
-
-* LDAP and HTTP auth are not supported
-
 ## Documentation and resources
 
 * Official app website: <https://www.concrete5.org>

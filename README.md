@@ -37,7 +37,7 @@ Features :
 * Official app website: <https://www.concrete5.org>
 * Official admin documentation: <https://documentation.concrete5.org>
 * Upstream app code repository: <https://github.com/concrete5/concrete5>
-* YunoHost documentation for this app: <https://yunohost.org/app_concrete5>
+* YunoHost Store: <https://apps.yunohost.org/app/concrete5>
 * Report a bug: <https://github.com/YunoHost-Apps/concrete5_ynh/issues>
 
 ## Developer info

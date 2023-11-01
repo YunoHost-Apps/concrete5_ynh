@@ -1,7 +1,6 @@
-SOURCE_URL=https://github.com/concretecms/concretecms/archive/refs/tags/9.1.1.tar.gz
-SOURCE_SUM=8880de7b391a041781270b3a74050b05572b5e536847eec85d8e566677e36c21
+SOURCE_URL=https://github.com/concretecms/concretecms/archive/refs/tags/9.2.1.tar.gz
+SOURCE_SUM=a75293f522fe9503da0c0c14ddfec9fc3f1b7b16f8de95796eec284b918771b5
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
 SOURCE_IN_SUBDIR=true
 SOURCE_FILENAME=
-SOURCE_EXTRACT=true

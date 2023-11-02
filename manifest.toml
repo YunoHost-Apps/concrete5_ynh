@@ -7,7 +7,7 @@ name = "Concrete CMS"
 description.en = "Open Source Content Management System for Teams"
 description.fr = "Système de gestion de contenu Open Source pour les équipes"
 
-version = "9.2.1~ynh1"
+version = "9.2.1~ynh2"
 
 maintainers = ["frju365"]
 

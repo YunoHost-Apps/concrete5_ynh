@@ -16,20 +16,19 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 
 ## Vue d’ensemble
 
-Concrete5 is a modern CMS.
+Concrete5 est un CMS moderne.
 
-### Features
+### Caractéristiques
 
-* SEO Tools
-* User mangament
-* Secure
-* Intuitive Editing
-* Theme and Block management
-* Marketing tools
-* **and more**...
+* Outils de référencement
+* Gestion des utilisateurs
+* Sécurisé
+* Édition intuitive
+* Gestion des thèmes et des blocs
+* Outils marketing
 
 
-**Version incluse :** 9.1.1~ynh2
+**Version incluse :** 9.2.1~ynh1
 ## Documentations et ressources
 
 * Site officiel de l’app : <https://www.concrete5.org>

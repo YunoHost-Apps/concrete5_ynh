@@ -35,6 +35,7 @@ Concrete5 is a modern CMS.
 * Site officiel de l’app : <https://www.concrete5.org>
 * Documentation officielle de l’admin : <https://documentation.concrete5.org>
 * Dépôt de code officiel de l’app : <https://github.com/concrete5/concrete5>
+* YunoHost Store: <https://apps.yunohost.org/app/concrete5>
 * Signaler un bug : <https://github.com/YunoHost-Apps/concrete5_ynh/issues>
 
 ## Informations pour les développeurs

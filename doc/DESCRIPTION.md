@@ -1,5 +1,7 @@
 Concrete5 is a modern CMS.
-Features : 
+
+### Features
+
 * SEO Tools
 * User mangament
 * Secure

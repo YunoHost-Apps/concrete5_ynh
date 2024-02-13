@@ -28,7 +28,7 @@ Concrete5 est un CMS moderne.
 * Outils marketing
 
 
-**Version incluse :** 9.2.4~ynh1
+**Version incluse :** 9.2.6~ynh1
 ## Documentations et ressources
 
 * Site officiel de l’app : <https://www.concrete5.org>

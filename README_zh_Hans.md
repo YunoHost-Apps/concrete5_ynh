@@ -5,7 +5,7 @@
 
 # YunoHost 上的 Concrete CMS
 
-[![集成程度](https://dash.yunohost.org/integration/concrete5.svg)](https://dash.yunohost.org/appci/app/concrete5) ![工作状态](https://ci-apps.yunohost.org/ci/badges/concrete5.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/concrete5.maintain.svg)
+[![集成程度](https://dash.yunohost.org/integration/concrete5.svg)](https://ci-apps.yunohost.org/ci/apps/concrete5/) ![工作状态](https://ci-apps.yunohost.org/ci/badges/concrete5.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/concrete5.maintain.svg)
 
 [![使用 YunoHost 安装 Concrete CMS](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=concrete5)
 
@@ -29,7 +29,7 @@ Concrete5 is a modern CMS.
 * **and more**...
 
 
-**分发版本：** 9.3.2~ynh1
+**分发版本：** 9.3.3~ynh1
 ## 文档与资源
 
 - 官方应用网站： <https://www.concrete5.org>

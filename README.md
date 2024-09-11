@@ -29,7 +29,7 @@ Concrete5 is a modern CMS.
 * **and more**...
 
 
-**Shipped version:** 9.3.3~ynh1
+**Shipped version:** 9.3.4~ynh1
 ## Documentation and resources
 
 - Official app website: <https://www.concrete5.org>

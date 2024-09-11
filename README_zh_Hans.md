@@ -29,7 +29,7 @@ Concrete5 is a modern CMS.
 * **and more**...
 
 
-**分发版本：** 9.3.3~ynh1
+**分发版本：** 9.3.4~ynh1
 ## 文档与资源
 
 - 官方应用网站： <https://www.concrete5.org>

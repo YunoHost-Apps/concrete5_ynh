@@ -29,7 +29,7 @@ Concrete5 is a modern CMS.
 * **and more**...
 
 
-**Versión actual:** 9.3.3~ynh1
+**Versión actual:** 9.3.7~ynh1
 ## Documentaciones y recursos
 
 - Sitio web oficial: <https://www.concrete5.org>
@@ -40,7 +40,7 @@ Concrete5 is a modern CMS.
 
 ## Información para desarrolladores
 
-Por favor enviar sus correcciones a la [`branch testing`](https://github.com/YunoHost-Apps/concrete5_ynh/tree/testing
+Por favor enviar sus correcciones a la [rama `testing`](https://github.com/YunoHost-Apps/concrete5_ynh/tree/testing).
 
 Para probar la rama `testing`, sigue asÍ:
 

@@ -5,7 +5,9 @@ EZ editatu eskuz.
 
 # Concrete CMS YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/concrete5.svg)](https://ci-apps.yunohost.org/ci/apps/concrete5/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/concrete5.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/concrete5.maintain.svg)
+[![Integrazio maila](https://apps.yunohost.org/badge/integration/concrete5)](https://ci-apps.yunohost.org/ci/apps/concrete5/)
+![Funtzionamendu egoera](https://apps.yunohost.org/badge/state/concrete5)
+![Mantentze egoera](https://apps.yunohost.org/badge/maintained/concrete5)
 
 [![Instalatu Concrete CMS YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=concrete5)
 
@@ -29,7 +31,7 @@ Concrete5 is a modern CMS.
 * **and more**...
 
 
-**Paketatutako bertsioa:** 9.3.3~ynh1
+**Paketatutako bertsioa:** 9.3.8~ynh1
 ## Dokumentazioa eta baliabideak
 
 - Aplikazioaren webgune ofiziala: <https://www.concrete5.org>

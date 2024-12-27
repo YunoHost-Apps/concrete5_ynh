@@ -5,7 +5,9 @@ Ini TIDAK boleh diedit dengan tangan.
 
 # Concrete CMS untuk YunoHost
 
-[![Tingkat integrasi](https://dash.yunohost.org/integration/concrete5.svg)](https://ci-apps.yunohost.org/ci/apps/concrete5/) ![Status kerja](https://ci-apps.yunohost.org/ci/badges/concrete5.status.svg) ![Status pemeliharaan](https://ci-apps.yunohost.org/ci/badges/concrete5.maintain.svg)
+[![Tingkat integrasi](https://apps.yunohost.org/badge/integration/concrete5)](https://ci-apps.yunohost.org/ci/apps/concrete5/)
+![Status kerja](https://apps.yunohost.org/badge/state/concrete5)
+![Status pemeliharaan](https://apps.yunohost.org/badge/maintained/concrete5)
 
 [![Pasang Concrete CMS dengan YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=concrete5)
 
@@ -29,7 +31,7 @@ Concrete5 is a modern CMS.
 * **and more**...
 
 
-**Versi terkirim:** 9.3.3~ynh1
+**Versi terkirim:** 9.3.8~ynh1
 ## Dokumentasi dan sumber daya
 
 - Website aplikasi resmi: <https://www.concrete5.org>

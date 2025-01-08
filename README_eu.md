@@ -31,7 +31,7 @@ Concrete5 is a modern CMS.
 * **and more**...
 
 
-**Paketatutako bertsioa:** 9.3.8~ynh1
+**Paketatutako bertsioa:** 9.3.9~ynh1
 ## Dokumentazioa eta baliabideak
 
 - Aplikazioaren webgune ofiziala: <https://www.concrete5.org>

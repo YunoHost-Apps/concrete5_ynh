@@ -22,8 +22,10 @@ cpe = "cpe:2.3:a:concrete5:concrete5"
 yunohost = ">= 11.2.0"
 architectures = "all"
 multi_instance = true
+
 ldap = false
 sso = false
+
 disk = "50M"
 ram.build = "50M"
 ram.runtime = "50M"

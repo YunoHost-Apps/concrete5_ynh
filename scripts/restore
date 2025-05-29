@@ -20,6 +20,7 @@ ynh_restore "$install_dir"
 ynh_script_progression "Restoring the MySQL database..."
 
 ynh_mysql_db_shell <<< "ALTER DATABASE $db_name CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+
 ynh_mysql_db_shell < ./db.sql
 
 #=================================================

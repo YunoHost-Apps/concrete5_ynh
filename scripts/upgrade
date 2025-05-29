@@ -1,83 +1,66 @@
 #!/bin/bash
 
-#=================================================
-# GENERIC START
-#=================================================
-# IMPORT GENERIC HELPERS
-#=================================================
-
 source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# CHECK VERSION
-#=================================================
-
-upgrade_type=$(ynh_check_app_version_changed)
-
-#=================================================
-# STANDARD UPGRADE STEPS
-#=================================================
 # ENSURE DOWNWARD COMPATIBILITY
 #=================================================
-ynh_script_progression --message="Ensuring downward compatibility..." --weight=1
+ynh_script_progression "Ensuring downward compatibility..."
 
-admin_name=$(ynh_app_setting_get --app="$app" --key=admin_name)
+admin_name=$(ynh_app_setting_get --key=admin_name)
 if [[ -n "$admin_name" ]]; then
     admin="$admin_name"
-    ynh_app_setting_set --app="$app" --key=admin
-    ynh_app_setting_delete --app="$app" --key=admin_name
+    ynh_app_setting_set --key=admin
+    ynh_app_setting_delete --key=admin_name
 fi
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 
-if [ "$upgrade_type" == "UPGRADE_APP" ]
+# FIXME: this is still supported but the recommendation is now to *always* re-setup the app sources wether or not the upstream sources changed
+if ynh_app_upstream_version_changed
 then
-    ynh_script_progression --message="Upgrading source files..." --weight=1
+    ynh_script_progression "Upgrading source files..."
 
     # Download, check integrity, uncompress and patch the source from app.src
     ynh_setup_source --dest_dir="$install_dir"
 fi
 
-chmod 750 "$install_dir"
-chmod -R o-rwx "$install_dir"
-chown -R "$app:www-data" "$install_dir"
-
+#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod 750 "$install_dir"
+#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod -R o-rwx "$install_dir"
+#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R "$app:www-data" "$install_dir"
 #=================================================
 # SYSTEM CONFIGURATIONS
 #=================================================
-ynh_script_progression --message="Adding system configurations related to $app..." --weight=1
+ynh_script_progression "Adding system configurations related to $app..."
 
-ynh_add_nginx_config
+ynh_config_add_nginx
 
-ynh_add_fpm_config
+ynh_config_add_phpfpm
 
-#=================================================
-# SPECIFIC UPGRADE
 #=================================================
 # UPGRADE COMPOSER
 #=================================================
-ynh_script_progression --message="Upgrading Composer..." --weight=1
+ynh_script_progression "Upgrading Composer..."
 
-ynh_composer_exec --phpversion="$phpversion" --workdir="$install_dir" --commands="update"
+ynh_composer_exec update
 
 #=================================================
 # UPGRADE CONCRETE5
 #=================================================
-ynh_script_progression --message="Upgrading Concrete5..." --weight=1
+ynh_script_progression "Upgrading Concrete5..."
 
 pushd "$install_dir"
     ./concrete/bin/concrete5 c5:update --rerun --verbose --allow-as-root
 popd
 
-chmod 750 "$install_dir"
-chmod -R o-rwx "$install_dir"
-chown -R "$app:www-data" "$install_dir"
-
+#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod 750 "$install_dir"
+#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod -R o-rwx "$install_dir"
+#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R "$app:www-data" "$install_dir"
 #=================================================
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Upgrade of $app completed" --last
+ynh_script_progression "Upgrade of $app completed"

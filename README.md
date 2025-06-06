@@ -8,7 +8,7 @@ It shall NOT be edited by hand.
   Concrete CMS, packaged for YunoHost
 </h1>
 
-Open Source Content Management System for Teams
+Content Management System for Teams
 
 [![🌐 Official app website](https://img.shields.io/badge/Official_app_website-darkgreen?style=for-the-badge)](https://www.concrete5.org)
 [![Version: 9.3.9~ynh1](https://img.shields.io/badge/Version-9.3.9~ynh1-rgba(0,150,0,1)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/concrete5/)

@@ -76,17 +76,17 @@ ram.runtime = "50M"
 
     [resources.apt]
     packages = [
-        "php8.2-pdo",
-        "php8.2-mysql",
-        "php8.2-dom",
-        "php8.2-simplexml",
-        "php8.2-iconv",
-        "php8.2-intl",
-        "php8.2-gd",
-        "php8.2-fileinfo",
-        "php8.2-mbstring",
-        "php8.2-curl",
-        "php8.2-zip",
+        "php8.4-pdo",
+        "php8.4-mysql",
+        "php8.4-dom",
+        "php8.4-simplexml",
+        "php8.4-iconv",
+        "php8.4-intl",
+        "php8.4-gd",
+        "php8.4-fileinfo",
+        "php8.4-mbstring",
+        "php8.4-curl",
+        "php8.4-zip",
         "mariadb-server",
         "curl",
     ]

@@ -34,7 +34,7 @@ ynh_composer_exec install --no-dev
 #================================================
 # CONCRETE5 INSTALLATION
 #=================================================
-ynh_script_progression "Concrete5 Installation, the installation can take long. So be patient ! :)"
+ynh_script_progression "Concrete5 Installation, the installation can take long. So be patient! :)"
 
 ynh_mysql_db_shell <<< "ALTER DATABASE $db_name CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
 

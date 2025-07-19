@@ -4,12 +4,12 @@ packaging_format = 2
 
 id = "concrete5"
 name = "Concrete CMS"
-description.en = "Open Source Content Management System for Teams"
-description.fr = "Système de gestion de contenu Open Source pour les équipes"
+description.en = "Content Management System for Teams"
+description.fr = "Système de gestion de contenu pour les équipes"
 
-version = "9.3.9~ynh1"
+version = "9.4.2~ynh1"
 
-maintainers = ["frju365"]
+maintainers = []
 
 [upstream]
 license = "MIT"
@@ -19,11 +19,14 @@ code = "https://github.com/concrete5/concrete5"
 cpe = "cpe:2.3:a:concrete5:concrete5"
 
 [integration]
-yunohost = ">= 11.2.0"
+yunohost = ">= 12.0.9"
+helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
+
 ldap = false
 sso = false
+
 disk = "50M"
 ram.build = "50M"
 ram.runtime = "50M"
@@ -44,8 +47,8 @@ ram.runtime = "50M"
     ask.en = "Choose the application language"
     ask.fr = "Choisissez la langue de l'application"
     type = "select"
-    choices = ["en_US", "fr_FR", "de_DE", "pt_PT"]
-    default = "en_US"
+    choices = ["en_US", "fr_FR", "it_IT", "de_DE", "pt_PT"]
+    default = "fr_FR"
 
     [install.admin]
     type = "user"
@@ -61,30 +64,31 @@ ram.runtime = "50M"
 
 [resources]
     [resources.sources.main]
-    url = "https://github.com/concrete5/concrete5/archive/refs/tags/9.3.9.tar.gz"
-    sha256 = "8e43f2026836a778bd8ee79ea83b63c902476aeeaf69c643cc11db988a80ce3e"
+    url = "https://github.com/concrete5/concrete5/archive/refs/tags/9.4.2.tar.gz"
+    sha256 = "e8b126cff99f088c8f6409d3dfc43e650b5d5c6727be547c0561aab810671482"
     autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
 
     [resources.install_dir]
+    group = "www-data:r-x"
 
     [resources.permissions]
     main.url = "/"
 
     [resources.apt]
     packages = [
-        "php8.2-pdo",
-        "php8.2-mysql",
-        "php8.2-dom",
-        "php8.2-simplexml",
-        "php8.2-iconv",
-        "php8.2-intl",
-        "php8.2-gd",
-        "php8.2-fileinfo",
-        "php8.2-mbstring",
-        "php8.2-curl",
-        "php8.2-zip",
+        "php8.4-pdo",
+        "php8.4-mysql",
+        "php8.4-dom",
+        "php8.4-simplexml",
+        "php8.4-iconv",
+        "php8.4-intl",
+        "php8.4-gd",
+        "php8.4-fileinfo",
+        "php8.4-mbstring",
+        "php8.4-curl",
+        "php8.4-zip",
         "mariadb-server",
         "curl",
     ]

@@ -9,7 +9,7 @@ description.fr = "Système de gestion de contenu pour les équipes"
 
 version = "9.4.1~ynh1"
 
-maintainers = ["frju365"]
+maintainers = []
 
 [upstream]
 license = "MIT"
@@ -47,8 +47,8 @@ ram.runtime = "50M"
     ask.en = "Choose the application language"
     ask.fr = "Choisissez la langue de l'application"
     type = "select"
-    choices = ["en_US", "fr_FR", "de_DE", "pt_PT"]
-    default = "en_US"
+    choices = ["en_US", "fr_FR", "it_IT", "de_DE", "pt_PT"]
+    default = "fr_FR"
 
     [install.admin]
     type = "user"

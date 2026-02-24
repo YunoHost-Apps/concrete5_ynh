@@ -32,7 +32,7 @@ ynh_composer_exec update
 ynh_script_progression "Upgrading Concrete5..."
 
 pushd "$install_dir"
-    ./concrete/bin/concrete5 c5:update --rerun --verbose --allow-as-root
+    php$php_version ./concrete/bin/concrete5 c5:update --rerun --verbose --allow-as-root
 popd
 
 chmod 750 "$install_dir"

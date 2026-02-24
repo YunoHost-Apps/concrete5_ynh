@@ -37,7 +37,7 @@ ynh_script_progression "Concrete5 Installation, the installation can take long. 
 ynh_mysql_db_shell <<< "ALTER DATABASE $db_name CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
 
 pushd "$install_dir"
-    ./concrete/bin/concrete5 c5:install --db-server=localhost \
+    php$php_version ./concrete/bin/concrete5 c5:install --db-server=localhost \
         --db-username="$db_user" \
         --db-database="$db_name" \
         --db-password="$db_pwd" \

@@ -7,7 +7,7 @@ name = "Concrete CMS"
 description.en = "Content Management System for Teams"
 description.fr = "Système de gestion de contenu pour les équipes"
 
-version = "9.4.7~ynh1"
+version = "9.4.8~ynh1"
 
 maintainers = []
 
@@ -64,8 +64,8 @@ ram.runtime = "50M"
 
 [resources]
     [resources.sources.main]
-    url = "https://github.com/concrete5/concrete5/archive/refs/tags/9.4.7.tar.gz"
-    sha256 = "4804a6190c2847fbe0402f413f786e533aa3d20362bc10a470b3a6a3d3639556"
+    url = "https://github.com/concrete5/concrete5/archive/refs/tags/9.4.8.tar.gz"
+    sha256 = "e137e9823291cd26c66e9c219d664ed0319639fb406ba8e9e72a5736f8028bc5"
     autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]

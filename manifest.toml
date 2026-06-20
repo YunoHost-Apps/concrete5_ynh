@@ -78,18 +78,18 @@ ram.runtime = "50M"
 
     [resources.apt]
     packages = [
-        "php8.4-fpm",
-        "php8.4-pdo",
-        "php8.4-mysql",
-        "php8.4-dom",
-        "php8.4-simplexml",
-        "php8.4-iconv",
-        "php8.4-intl",
-        "php8.4-gd",
-        "php8.4-fileinfo",
-        "php8.4-mbstring",
-        "php8.4-curl",
-        "php8.4-zip",
+        "php8.5-fpm",
+        "php8.5-pdo",
+        "php8.5-mysql",
+        "php8.5-dom",
+        "php8.5-simplexml",
+        "php8.5-iconv",
+        "php8.5-intl",
+        "php8.5-gd",
+        "php8.5-fileinfo",
+        "php8.5-mbstring",
+        "php8.5-curl",
+        "php8.5-zip",
         "mariadb-server",
         "curl",
     ]
@@ -98,4 +98,4 @@ ram.runtime = "50M"
     type = "mysql"
 
     [resources.composer]
-    version = "2.8.11"
+    version = "2.10.1"

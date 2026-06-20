@@ -78,7 +78,6 @@ ram.runtime = "250M"
 
     [resources.apt]
     packages = [
-        "php8.5-fpm",
         "php8.5-pdo",
         "php8.5-mysql",
         "php8.5-dom",

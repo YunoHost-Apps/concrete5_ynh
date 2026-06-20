@@ -19,7 +19,7 @@ code = "https://github.com/concrete5/concrete5"
 cpe = "cpe:2.3:a:concrete5:concrete5"
 
 [integration]
-yunohost = ">= 12.1.38"
+yunohost = ">= 12.1.39"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
@@ -65,7 +65,7 @@ ram.runtime = "50M"
 [resources]
     [resources.sources.main]
     url = "https://github.com/concrete5/concrete5/archive/refs/tags/9.5.2.tar.gz"
-    sha256 = "61679956acd630a0dc79e7b91f7181c4198a4ff7f11e9e5716c2da90560e1d68"
+    sha256 = "99ac0206762d09ba523f48215564ab69de311ccb28f755fa1ae39cfa79a81148"
     autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]

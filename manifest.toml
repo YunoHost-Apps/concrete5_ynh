@@ -19,7 +19,7 @@ code = "https://github.com/concrete5/concrete5"
 cpe = "cpe:2.3:a:concrete5:concrete5"
 
 [integration]
-yunohost = ">= 12.1.39"
+yunohost = ">= 12.1.40"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
@@ -97,4 +97,4 @@ ram.runtime = "250M"
     type = "mysql"
 
     [resources.composer]
-    version = "2.10.1"
+    version = "2.10.3"
